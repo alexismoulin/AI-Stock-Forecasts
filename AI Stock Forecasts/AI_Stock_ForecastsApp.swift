@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct AI_Stock_ForecastsApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = DataController.shared
     var body: some Scene {
         WindowGroup {
             HomeView()

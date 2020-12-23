@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CompanyView: View {
+struct EditView: View {
     
     @Environment(\.managedObjectContext) private var moc
     @Environment(\.presentationMode) var presentation

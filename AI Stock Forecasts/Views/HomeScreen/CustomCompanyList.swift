@@ -6,7 +6,7 @@ struct CustomCompanyList: View {
     
     var body: some View {
         List(customCompanies) { company in
-            NavigationLink(destination: CompanyView(company: company)) {
+            NavigationLink(destination: EditView(company: company)) {
                 HStack {
                     Text(company.wrappedName)
                     Spacer()

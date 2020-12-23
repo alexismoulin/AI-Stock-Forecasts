@@ -10,7 +10,6 @@ struct Model1 {
             let predictions = try self.modelArobase.predictions(inputs: tweets)
             var sentimentScore: Int = 0
             for pred in predictions {
-                print("-> \(pred.label) <-")
                 switch pred.label {
                 case "pos":
                     sentimentScore += 1
@@ -38,7 +37,6 @@ struct Model2 {
             let predictions = try self.modelHash.predictions(inputs: tweets)
             var sentimentScore: Int = 0
             for pred in predictions {
-                print("-> \(pred.label) <-")
                 switch pred.label {
                 case "positive":
                     sentimentScore += 1

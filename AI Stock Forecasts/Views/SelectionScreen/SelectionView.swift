@@ -54,7 +54,7 @@ struct SelectionView: View {
     private func createPicker() -> some View {
         return VStack {
             Picker(selection: $selectedCompanyIndex.animation(.easeInOut), label: Text("")) {
-                ForEach(0..<allCompanies.count) {
+                ForEach(0..<allCompanies.count) {  // to be modified as count may vary
                     Text(allCompanies[$0].name)
                 }
             }

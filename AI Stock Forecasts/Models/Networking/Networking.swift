@@ -1,14 +1,15 @@
 import Foundation
 import Swifter
+import NaturalLanguage
 
 struct Networking {
     
     let swifter = Swifter(consumerKey: Keys.twitterKey, consumerSecret: Keys.twitterSecretKey)
     let model1 = Model1()
     let model2 = Model2()
-    
+ 
     func fetchTweets1(company: String, completion: @escaping (Int) -> Void) {
-        
+    // Get 60 tweets using @Company from Tweeter and score them with Model 1 trained on IMBD
         swifter.searchTweet(
             using: company,
             lang: "en",
@@ -19,11 +20,9 @@ struct Networking {
                 for i in 0...59 {
                     if let tweet = results[i]["full_text"].string {
                         tweets.append(TextClassifier1Input(text: tweet))
-                        print("\(i) - \(tweet)")
                     }
                 }
                 let score = model1.makePrediction1(with: tweets)
-                print("Arobases -> \(score)")
                 completion(score)
             }) { (error) in
             print("There was an error with the Twitter API: --> ", error)
@@ -32,7 +31,7 @@ struct Networking {
     }
     
     func fetchTweets2(company: String, completion: @escaping (Int) -> Void) {
-        
+        // Get 60 tweets using #StockSymbol from Tweeter and score them with Model 2 trained on financial tweets
         swifter.searchTweet(
             using: company,
             lang: "en",
@@ -43,11 +42,9 @@ struct Networking {
                 for i in 0...59 {
                     if let tweet = results[i]["full_text"].string {
                         tweets.append(TextClassifier2Input(text: tweet))
-                        print("\(i) - \(tweet)")
                     }
                 }
                 let score = model2.makePrediction2(with: tweets)
-                print("Hashes -> \(score)")
                 completion(score)
             }) { (error) in
             print("There was an error with the Twitter API: --> ", error)
@@ -56,8 +53,10 @@ struct Networking {
     }
     
     func fetchData(company: String, completion: @escaping (Int) -> Void) {
+        // Get 20 news title from News-API and score them with NLTagger
+        let tagger = NLTagger(tagSchemes: [.sentimentScore])
+        var totalScore: Double = 0
         let key = Keys.newsApiKey
-        var titles = [TextClassifier1Input]()
         if let url = URL(string: "https://newsapi.org/v2/everything?q=\(company)&apiKey=\(key)") {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -66,13 +65,15 @@ struct Networking {
                     if let safeData = data {
                         do {
                             let results = try decoder.decode(News.self, from: safeData)
+                            
                             for article in results.articles {
-                                titles.append(TextClassifier1Input(text: article.title))
-                                print(article.title)
+                                tagger.string = article.title
+                                let (sentiment, _) = tagger.tag(at: article.title.startIndex, unit: .paragraph, scheme: .sentimentScore)
+                                let score: Double = Double(sentiment?.rawValue ?? "0") ?? 0
+                                totalScore += score
                             }
-                            let score = model1.makePrediction1(with: titles)
-                            print("News-> \(score)")
-                            completion(score)
+                            
+                            completion(Int(totalScore))
                         } catch {
                             print("ERROR NEWS API --->>> ", error.localizedDescription)
                             completion(0)

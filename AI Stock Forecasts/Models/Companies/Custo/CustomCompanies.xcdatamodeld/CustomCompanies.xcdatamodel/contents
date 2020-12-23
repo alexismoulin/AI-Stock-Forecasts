@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CustomCompany" representedClassName="CustomCompany" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CustomCompany" representedClassName="CustomCompany" syncable="YES" codeGenerationType="class">
         <attribute name="arobase" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -12,6 +12,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CustomCompany" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="CustomCompany" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

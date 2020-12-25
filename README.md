@@ -17,23 +17,24 @@
 
 ## General information about this app
 
-This iOS app predicts Fortune 100 companies stock price evolution through sentiment analysis
-This app uses **SwiftUI** for the layout, **CoreML** for the models creation, **Twitter** and **News-api** as the sources for data analysis.
+This iOS app predicts Fortune 100 companies stock price evolution through sentiment analysis. It uses **SwiftUI** for the layout, **CoreML** for the models creation, **Twitter** and **News-api** as the sources for data analysis.
+
+The latest versions (1.4 and up) use **Core Data** to let you add, manage and save your own companies as well as cryptocurrencies.
 
 ## Quick presentation of the app
 
-![Untitled 001](https://user-images.githubusercontent.com/26531613/90335413-ee10dd00-dfa2-11ea-8fdc-c5b47f32738e.jpeg)
+![screenshot](https://user-images.githubusercontent.com/26531613/100556986-01a33380-3274-11eb-9199-6cbbc076f343.png)
 
 ## How does it work?
 
 For this app, I am using **Twitter** and **News-api** as the sources for my sentiment analysis.
 
-I am performing the company analysis via 100 twitter comments about the company. Those comments are splitted in 2 sets. The first set gathers the 50 most recent tweets about the company (Ex: @apple) and the second set gathers the 50 most recent tweets about the stock (Ex: #AAPL).
+I am performing the company analysis via 120 twitter comments about the company. Those comments are splitted in 2 sets. The first set gathers the 60 most recent tweets about the company (Ex: @apple) and the second set gathers the 60 most recent tweets about the stock (Ex: #AAPL).
 As the wording between those 2 sets of comments is very different, I used 2 different models trained on different datasets: IMBD dataset of 50k movie reviews for the first model and the Kaggle Sentiment Analysis on Financial Tweets dataset for the 2nd model.
 
 Then, I fetch the 20 most recent news articles about the company and use the first model to perform the sentiment analysis on those news articles
 
-Finally, I calculate a total score based on the sentiment analysis of those 120 comments
+Finally, I calculate a total score based on the sentiment analysis of those 140 comments
 
 ## Animated demo of the app
 

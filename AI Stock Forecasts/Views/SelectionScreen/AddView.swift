@@ -6,7 +6,8 @@ struct AddView: View {
     @State private var name: String = ""
     @State private var arobase: String = ""
     
-    @Environment(\.managedObjectContext) private var moc
+    @EnvironmentObject var dataController: DataController
+    @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentation
     
     var notReady: Bool {
@@ -31,13 +32,7 @@ struct AddView: View {
                     newCustomCompany.name = name
                     newCustomCompany.arobase = arobase
                     newCustomCompany.sector = sector
-                    if moc.hasChanges {
-                        do {
-                            try moc.save()
-                        } catch {
-                            print("Cannot save ---> \(error.localizedDescription)")
-                        }
-                    }
+                    dataController.save()
                     presentation.wrappedValue.dismiss()
                 } label: {
                     notReady ? ButtonStyled(text: "Not Ready", color: Color.gray.opacity(0.5)) : ButtonStyled(text: "Add", color: .blue)

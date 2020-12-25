@@ -2,7 +2,7 @@ import SwiftUI
 
 struct EditView: View {
     
-    @Environment(\.managedObjectContext) private var moc
+    @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentation
     
     var company: CustomCompany
@@ -64,13 +64,7 @@ struct EditView: View {
                             company.id = newId
                             company.name = newName
                             company.sector = newSector.rawValue
-                            if moc.hasChanges {
-                                do {
-                                    try moc.save()
-                                } catch {
-                                    print("Cannot save ---> \(error.localizedDescription)")
-                                }
-                            }
+                            dataController.save()
                             modificationMode = false
                         }.foregroundColor(.green) :
                         Button("Delete") {
@@ -87,14 +81,8 @@ struct EditView: View {
                 message: Text("The deletion is permanent and cannot be undone. Are you sure?"),
                 primaryButton: .cancel(Text("Cancel")),
                 secondaryButton: .destructive(Text("Delete"), action: {
-                    moc.delete(company)
-                    if moc.hasChanges {
-                        do {
-                            try moc.save()
-                        } catch {
-                            print("Cannot delete ---> \(error.localizedDescription)")
-                        }
-                    }
+                    dataController.delete(company)
+                    dataController.save()
                     presentation.wrappedValue.dismiss()
                 }))
         }

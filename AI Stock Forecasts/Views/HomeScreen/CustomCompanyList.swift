@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct CustomCompanyList: View {
-    @Environment(\.managedObjectContext) private var moc
+    
+    @EnvironmentObject var dataController: DataController
     @FetchRequest(entity: CustomCompany.entity(), sortDescriptors: []) var customCompanies: FetchedResults<CustomCompany>
     
     var body: some View {

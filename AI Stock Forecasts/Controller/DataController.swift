@@ -1,7 +1,6 @@
 import CoreData
 
-struct DataController {
-    static let shared = DataController()
+class DataController: ObservableObject {
     
     let container: NSPersistentContainer
 
@@ -16,5 +15,15 @@ struct DataController {
                 fatalError("Unresolved error \(error.localizedDescription), \(error.userInfo)")
             }
         })
+    }
+    
+    func save() {
+        if container.viewContext.hasChanges {
+            try? container.viewContext.save()
+        }
+    }
+    
+    func delete(_ object: NSManagedObject) {
+        container.viewContext.delete(object)
     }
 }

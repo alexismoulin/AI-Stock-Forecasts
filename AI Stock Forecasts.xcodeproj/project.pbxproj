@@ -125,6 +125,7 @@
 				5E25B5B625190E3F00138E61 /* Info.plist */,
 				5E25B5D925190FDC00138E61 /* Models */,
 				5E25B5C125190FD200138E61 /* Views */,
+				5E740C722593E60400DD7E6A /* Controller */,
 				5E70E241259150EF00C96875 /* Supporting Files */,
 				5E25B5B325190E3F00138E61 /* Preview Content */,
 			);
@@ -276,6 +277,14 @@
 			path = Stocks;
 			sourceTree = "<group>";
 		};
+		5E740C722593E60400DD7E6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E0BF891256C867300A5E2C9 /* DataController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5E7DA927256DEF7200345B87 /* Standard */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +300,6 @@
 			children = (
 				5E0BF88D256C824E00A5E2C9 /* CustomCompanies.xcdatamodeld */,
 				5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */,
-				5E0BF891256C867300A5E2C9 /* DataController.swift */,
 			);
 			path = Custo;
 			sourceTree = "<group>";

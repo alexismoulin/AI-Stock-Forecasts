@@ -26,9 +26,3 @@ struct Bar: UIViewRepresentable {
     typealias UIViewType = BarChartView
     
 }
-
-struct Bar_Previews: PreviewProvider {
-    static var previews: some View {
-        Bar(entries: [BarChartDataEntry(x: 1, y: 1)])
-    }
-}

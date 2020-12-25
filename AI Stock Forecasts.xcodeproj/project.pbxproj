@@ -15,6 +15,8 @@
 		5E0BF896256C871500A5E2C9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BF895256C871500A5E2C9 /* AddView.swift */; };
 		5E0BF89D256CAEB300A5E2C9 /* CustomCompanyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BF89C256CAEB300A5E2C9 /* CustomCompanyList.swift */; };
 		5E1561032533BB3F009A0158 /* Arrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1561022533BB3F009A0158 /* Arrows.swift */; };
+		5E161A9425964A3B0006DD13 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E161A9325964A3B0006DD13 /* DataPoint.swift */; };
+		5E161A9725964A990006DD13 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E161A9625964A990006DD13 /* BarChart.swift */; };
 		5E25B5AE25190E3D00138E61 /* AI_Stock_ForecastsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5AD25190E3D00138E61 /* AI_Stock_ForecastsApp.swift */; };
 		5E25B5B225190E3F00138E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E25B5B125190E3F00138E61 /* Assets.xcassets */; };
 		5E25B5B525190E3F00138E61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E25B5B425190E3F00138E61 /* Preview Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		5E0BF895256C871500A5E2C9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		5E0BF89C256CAEB300A5E2C9 /* CustomCompanyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCompanyList.swift; sourceTree = "<group>"; };
 		5E1561022533BB3F009A0158 /* Arrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrows.swift; sourceTree = "<group>"; };
+		5E161A9325964A3B0006DD13 /* DataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
+		5E161A9625964A990006DD13 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		5E25B5AA25190E3D00138E61 /* AI Stock Forecasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Stock Forecasts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E25B5AD25190E3D00138E61 /* AI_Stock_ForecastsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI_Stock_ForecastsApp.swift; sourceTree = "<group>"; };
 		5E25B5B125190E3F00138E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				5E25B5CC25190FD200138E61 /* StockChart.swift */,
+				5E161A9325964A3B0006DD13 /* DataPoint.swift */,
+				5E161A9625964A990006DD13 /* BarChart.swift */,
 				5E7120AB253E58FF00D4C698 /* Bar.swift */,
 			);
 			path = StockChart;
@@ -412,6 +418,7 @@
 				5EF48E72254C3B0000BD4401 /* YahooFinance.swift in Sources */,
 				5E2B9DEA25312D68001DC30D /* Models.swift in Sources */,
 				5E7DA91F256DE04800345B87 /* EditView.swift in Sources */,
+				5E161A9725964A990006DD13 /* BarChart.swift in Sources */,
 				5E25B5E125190FDC00138E61 /* TextClassifier1.mlmodel in Sources */,
 				5E25B5D325190FD200138E61 /* Color+Extensions.swift in Sources */,
 				5E0BF88F256C824E00A5E2C9 /* CustomCompanies.xcdatamodeld in Sources */,
@@ -419,6 +426,7 @@
 				5E0BF892256C867300A5E2C9 /* DataController.swift in Sources */,
 				5E25B5D425190FD200138E61 /* ResultView.swift in Sources */,
 				5E25B5D125190FD200138E61 /* ButtonStyled.swift in Sources */,
+				5E161A9425964A3B0006DD13 /* DataPoint.swift in Sources */,
 				5E25B5D725190FD200138E61 /* Tile.swift in Sources */,
 				5E25B5D225190FD200138E61 /* CircleControl.swift in Sources */,
 				5ECA898A25929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift in Sources */,
@@ -552,7 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"AI Stock Forecasts/Preview Content\"";
 				DEVELOPMENT_TEAM = R28KNM82KD;
 				ENABLE_PREVIEWS = YES;
@@ -562,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex.AI-Stock-Forecasts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -576,7 +584,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"AI Stock Forecasts/Preview Content\"";
 				DEVELOPMENT_TEAM = R28KNM82KD;
 				ENABLE_PREVIEWS = YES;
@@ -586,7 +594,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex.AI-Stock-Forecasts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

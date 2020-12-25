@@ -26,7 +26,6 @@ struct YahooFinance {
                     do {
                         let results = try decoder.decode(Chart.self, from: safeData)
                         let stockPrices = results.chart.result[0].indicators.quote[0].close
-                        print("data -> \n \(stockPrices)")
                         stockPriceArray = stockPrices
                     } catch {
                         print("ERROR RapidAPI --->>> ", error.localizedDescription)

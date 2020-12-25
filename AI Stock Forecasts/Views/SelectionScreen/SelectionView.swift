@@ -54,7 +54,7 @@ struct SelectionView: View {
     private func createPicker() -> some View {
         return VStack {
             Picker(selection: $selectedCompanyIndex.animation(.easeInOut), label: Text("")) {
-                ForEach(0..<allCompanies.count) {  // to be modified as count may vary
+                ForEach(0..<allCompanies.count, id: \.self) {
                     Text(allCompanies[$0].name)
                 }
             }
@@ -101,10 +101,6 @@ struct SelectionView: View {
                             selectedCompany.newsScore = newsScore
                             progression = 1.0
                             ready = true
-                            print(selectedCompany.name)
-                            print(selectedCompany.arobaseScore)
-                            print(selectedCompany.hashScore)
-                            print(selectedCompany.newsScore)
                         }
                     }
                 }

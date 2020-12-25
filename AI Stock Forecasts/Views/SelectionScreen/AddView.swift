@@ -26,7 +26,6 @@ struct AddView: View {
             VStack {
                 Spacer()
                 Button {
-                    print("ok")
                     let newCustomCompany = CustomCompany(context: moc)
                     newCustomCompany.id = symbol
                     newCustomCompany.name = name

@@ -7,9 +7,9 @@ struct Networking {
     let swifter = Swifter(consumerKey: Keys.twitterKey, consumerSecret: Keys.twitterSecretKey)
     let model1 = Model1()
     let model2 = Model2()
- 
+    
     func fetchTweets1(company: String, completion: @escaping (Int) -> Void) {
-    // Get 60 tweets using @Company from Tweeter and score them with Model 1 trained on IMBD
+        // Get 60 tweets using @Company from Tweeter and score them with Model 1 trained on IMBD
         swifter.searchTweet(
             using: company,
             lang: "en",
@@ -65,12 +65,17 @@ struct Networking {
                     if let safeData = data {
                         do {
                             let results = try decoder.decode(News.self, from: safeData)
-                            
+                            // apply NLTagger for each article title
                             for article in results.articles {
                                 tagger.string = article.title
                                 let (sentiment, _) = tagger.tag(at: article.title.startIndex, unit: .paragraph, scheme: .sentimentScore)
                                 let score: Double = Double(sentiment?.rawValue ?? "0") ?? 0
-                                totalScore += score
+                                // use squareroot to increase distribution STD
+                                if score >= 0 {
+                                    totalScore += score.squareRoot()
+                                } else {
+                                    totalScore -= (-score).squareRoot()
+                                }
                             }
                             
                             completion(Int(totalScore))

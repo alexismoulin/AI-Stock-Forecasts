@@ -51,7 +51,7 @@ struct ResultView: View {
     }
     
     private func createCircleControl(radius: CGFloat) -> some View {
-        let totalBalance: Double = 200
+        //let totalBalance: Double = 200
         let segments: [Segment] = [
             Segment(
                 color: Color.red.opacity(0.8),
@@ -80,12 +80,7 @@ struct ResultView: View {
                 description: "The company and the stock have very positive feedbacks - The value of the stock is likely to increase slightly in the near future")
         ]
         
-        let circleControl = CircleControl(
-            totalBalance: totalBalance,
-            segments: segments,
-            selectedSegment: $selectedSegment,
-            company: company
-        )
+        let circleControl = CircleControl(segments: segments, selectedSegment: $selectedSegment, company: company)
         
         return circleControl
             .frame(width: radius, height: radius)

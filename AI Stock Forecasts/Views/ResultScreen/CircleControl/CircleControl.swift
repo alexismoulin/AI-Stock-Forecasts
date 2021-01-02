@@ -2,18 +2,16 @@ import SwiftUI
 
 struct CircleControl: View {
     
-    let totalBalance: Double
     let segments: [Segment]
-    
     @Binding var selectedSegment: Segment?
-    
-    var company: Company
+    let company: Company
     
     var shiftedScore: Double {
         return company.totalScore + 100 // from 0 to 200
     }
     
-    private let lineWidth: CGFloat = 44.0
+    let totalBalance: Double = 200
+    let lineWidth: CGFloat = 44.0
     
     // MARK: - Screen body
     
@@ -88,7 +86,7 @@ struct CircleControl: View {
                 endAngle: .radians(angle),
                 clockwise: false)
             path = path.strokedPath(.init(lineWidth: lineWidth - 2.0))
-        }.fill(gradient)
+        }.fill(gradient).animation(.default)
     }
     
     private func createTopArc(radius: CGFloat) -> some View {
@@ -150,7 +148,6 @@ struct CircleControl: View {
             Text("Score:")
             Text("\(String(format: "%.0f", company.totalScore))")
         }.font(Font.system(size: 40.0, weight: .bold, design: .rounded))
-        // incorrect error message with xcode12 - should work fine
         .frame(width: diametr, height: 75.0, alignment: .center)
         .minimumScaleFactor(0.5)
     }

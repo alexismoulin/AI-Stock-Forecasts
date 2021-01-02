@@ -5,7 +5,7 @@ struct StockChart: View {
     
     var stockSymbol: String
     
-    @State var stockPrices: [Double] = [Double]()
+    @State var stockPrices: [Double] = []
     
     func createBarChart(stocks: [Double]) -> some View {
         var stockEntries = [BarChartDataEntry]()
@@ -17,7 +17,7 @@ struct StockChart: View {
     
     var body: some View {
         return VStack {
-            Text("Daily stock chart for the last month")
+            Text("Daily stock chart for the last 20 days")
                 .font(.headline)
                 .fontWeight(.semibold)
                 .padding(.bottom, 5)
@@ -44,8 +44,8 @@ struct StockChart: View {
             } else {
                 createBarChart(stocks: stockPrices).frame(height: 200)
             }
-        }.onAppear { YahooFinance.getHistoricalData(stockSymbol: stockSymbol) { results in
-            stockPrices = results
+        }.onAppear { getHistoricalData(stockSymbol: stockSymbol) { results in
+            stockPrices = results.map { $0.value }
         }
         
         }

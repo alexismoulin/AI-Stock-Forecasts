@@ -5,11 +5,16 @@ struct SectorTabView: View {
     
     var sector: String
     
-    var fetchRequest: FetchRequest<CustomCompany>
+    let fetchRequest: FetchRequest<CustomCompany>
     
     init(sector: String) {
         self.sector = sector
-        fetchRequest = FetchRequest<CustomCompany>(entity: CustomCompany.entity(), sortDescriptors: [], predicate: NSPredicate(format: "sector == %@", sector), animation: nil)
+        fetchRequest = FetchRequest<CustomCompany>(
+            entity: CustomCompany.entity(),
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "sector == %@", sector),
+            animation: nil
+        )
     }
     
     var body: some View {

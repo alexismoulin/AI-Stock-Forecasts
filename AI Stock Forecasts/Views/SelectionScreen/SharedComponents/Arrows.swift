@@ -13,7 +13,7 @@ struct Triangle: Shape {
     }
 }
 
-enum ArrowType {
+enum ArrowType: String, CaseIterable {
     case up
     case down
 }

@@ -11,10 +11,6 @@ struct HomeView: View {
                 VStack {
                     HeaderView()
                     ScrollView {
-                        NavigationLink(destination: CustomCompanyList()) {
-                            Text("Manage custom companies")
-                        }
-                        Divider()
                         LazyVGrid(columns: layout, spacing: 10) {
                             ForEach(Sector.allCases, id: \.self) { sector in
                                 Tile(sector: sector.rawValue)

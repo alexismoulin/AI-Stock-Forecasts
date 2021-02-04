@@ -24,20 +24,20 @@ struct SectorTabView: View {
                     Image(systemName: "target")
                     Text("Single")
                 }
-            TopBottomView(sector: sector, type: .up, fetchRequest: fetchRequest)
+            TopBottomView(sector: sector, fetchRequest: fetchRequest)
                 .tabItem {
-                    Image(systemName: "chevron.up")
-                    Text("Top 5")
-                }
-            TopBottomView(sector: sector, type: .down, fetchRequest: fetchRequest)
-                .tabItem {
-                    Image(systemName: "chevron.down")
-                    Text("Bottom 5")
+                    Image(systemName: "chevron.up.chevron.down")
+                    Text("Top Bottom 5")
                 }
             AddView(sector: sector)
                 .tabItem {
                     Image(systemName: "plus")
                     Text("Add Company")
+                }
+            CustomCompanyList()
+                .tabItem {
+                    Image(systemName: "square.and.pencil")
+                    Text("Edit Companies")
                 }
         }
         .colorScheme(.light)

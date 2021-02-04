@@ -24,9 +24,12 @@ struct SelectionView: View {
     
     // MARK: - States
     
-    @State private var selectedCompanyIndex: Int = 0
+    @State private var selectedCompanyId: String = ""
     @State private var ready: Bool = false
     @State private var progression: Double = 0.0
+    @State private var presentPicker: Bool = false
+    @State private var fieldString: String = ""
+    @State private var tag: Int = 1
     
     // MARK: - Screen body
     
@@ -34,14 +37,26 @@ struct SelectionView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.vertical)
             VStack(alignment: .center, spacing: 5) {
-                SectionTitle(title: "Company Selection", subTitle: "Select a company in the list below: ")
-                createPicker()
-                Spacer()
-                createLogoImage(hash: allCompanies[selectedCompanyIndex].custom ? "custom" : allCompanies[selectedCompanyIndex].hash)
+                SectionTitle(title: "Company Selection")
+                CustomPickerTextView(
+                    presentPicker: $presentPicker,
+                    fieldString: $fieldString,
+                    placeholder: "Select a company"
+                )
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
                 Spacer()
                 Divider()
                 createButtons().padding(.top, 5)
                 ProgressView(value: progression, total: 1.0).padding(5)
+            }
+            if presentPicker {
+                CustomPickerView(
+                    items: allCompanies,
+                    pickerField: $fieldString,
+                    presentPicker: $presentPicker,
+                    selectedCompanyId: $selectedCompanyId
+                ).zIndex(1.0)
             }
         }
         .colorScheme(.light)
@@ -51,25 +66,8 @@ struct SelectionView: View {
     
     // MARK: - Components
     
-    private func createPicker() -> some View {
-        return VStack {
-            Picker(selection: $selectedCompanyIndex.animation(.easeInOut), label: Text("")) {
-                ForEach(0..<allCompanies.count, id: \.self) {
-                    Text(allCompanies[$0].name)
-                }
-            }
-            .labelsHidden()
-            HStack {
-                Text("Your have selected: ")
-                Text("\(allCompanies[selectedCompanyIndex].name)")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.blue)
-            }
-        }
-    }
-    
-    private func createLogoImage(hash: String) -> some View {
-        return Image(hash)
+    private func createLogoImage(companyId: String) -> some View {
+        return Image(uiImage: UIImage(named: "#\(companyId)") ?? UIImage(named: "custom")!)
             .resizable()
             .scaledToFit()
             .padding(5)
@@ -77,7 +75,7 @@ struct SelectionView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
             .shadow(color: .gray, radius: 2)
-            .padding(5)
+            .padding()
     }
     
     private func createButtons() -> some View {
@@ -85,12 +83,11 @@ struct SelectionView: View {
         let predictButton = ButtonStyled(text: "forecast", color: Color.black)
         let buttonBeforePredict = ButtonStyled(text: "not ready", color: Color.gray.opacity(0.5))
         let buttonAfterPredict = ButtonStyled(text: "results", color: Color.blue)
+        let selectedCompany: Company = allCompanies.first(where: { $0.id == selectedCompanyId }) ?? allCompanies[0]
         
         return HStack(spacing: 16.0) {
             
             Button(action: {
-                let selectedCompany = allCompanies[selectedCompanyIndex]
-                
                 network.fetchTweets1(company: selectedCompany.arobase) { arobaseScore in
                     progression = 0.3
                     network.fetchTweets2(company: selectedCompany.hash) { hashScore in
@@ -108,7 +105,7 @@ struct SelectionView: View {
                 predictButton
             }
             
-            NavigationLink(destination: ResultView(company: allCompanies[selectedCompanyIndex])) {
+            NavigationLink(destination: ResultView(company: selectedCompany)) {
                 ready ? buttonAfterPredict : buttonBeforePredict
             }
             .disabled(!ready)

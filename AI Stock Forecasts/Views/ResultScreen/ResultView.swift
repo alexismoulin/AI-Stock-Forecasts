@@ -15,11 +15,10 @@ struct ResultView: View {
                 Color.background.edgesIgnoringSafeArea(.vertical)
                 ScrollView {
                     VStack(alignment: .center) {
-                        SectionTitle(title: "Stock Forecast Score", subTitle: "Score based on company and stock analysis")
+                        SectionTitle(title: "Stock Forecast Score", subTitle: "Score based on company sentiment analysis")
                         createCircleControl(radius: circleRadius)
                         createDescription()
                         Divider()
-                        //createDebug()
                         StockChart(stockSymbol: company.id)
                     }
                 }

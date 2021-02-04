@@ -5,14 +5,14 @@ struct TopBottomView: View {
     let network = Networking()
     
     var sector: String
-    var type: ArrowType
+    //var type: ArrowType
     var fetchRequest: FetchRequest<CustomCompany>
     var allCompanies: [Company]
     
-    init(sector: String, type: ArrowType, fetchRequest: FetchRequest<CustomCompany>) {
+    init(sector: String, fetchRequest: FetchRequest<CustomCompany>) {
         self.sector = sector
         self.fetchRequest = fetchRequest
-        self.type = type
+
         allCompanies = CompaniesModel.getAllCompaniesFromSector(for: sector) ?? [Company(id: "ERROR", name: "ERROR", arobase: "ERROR", sector: "ERROR", custom: false)]
         for custom in fetchRequest.wrappedValue {
             allCompanies.append(Company(id: custom.wrappedId, name: custom.wrappedName, arobase: custom.wrappedArobase, sector: custom.wrappedSector, custom: true))
@@ -21,17 +21,25 @@ struct TopBottomView: View {
     
     @State private var ready: Bool = false
     @State private var progression: Double = 0.0
+    @State private var arrowType: ArrowType = .up
     
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.vertical)
             VStack(spacing: 5) {
                 SectionTitle(
-                    title: type == .up ? "Top 5 companies" : "Bottom 5 companies",
-                    subTitle: type == .up ? "Best stock outcomes for the sector" : "Worst stock outcomes for the sector"
+                    title: arrowType == .up ? "Top 5 companies" : "Bottom 5 companies",
+                    subTitle: arrowType == .up ? "Best stock outcomes for the sector" : "Worst stock outcomes for the sector"
                 )
+                Picker(selection: $arrowType, label: Text("Arrow label")) {
+                    ForEach(ArrowType.allCases, id:\.self) {
+                        Text($0.rawValue.capitalized)
+                    }
+                }
+                .padding()
+                .pickerStyle(SegmentedPickerStyle())
                 Spacer()
-                Arrows(type: type)
+                Arrows(type: arrowType)
                 Spacer()
                 Divider()
                 createButtons().padding(.top, 5)
@@ -75,7 +83,7 @@ struct TopBottomView: View {
             NavigationLink(destination: TopBottomResultsView(
                 sector: sector,
                 companyArray: allCompanies,
-                type: type
+                type: arrowType
             )) {
                 ready ? buttonAfterPredict : buttonBeforePredict
             }

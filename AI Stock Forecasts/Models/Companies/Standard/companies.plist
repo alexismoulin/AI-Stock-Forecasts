@@ -718,7 +718,7 @@
 		<key>id</key>
 		<string>DPZ</string>
 		<key>name</key>
-		<string>Domino&#39;s Pizza</string>
+		<string>Domino&apos;s Pizza</string>
 		<key>sector</key>
 		<string>goods</string>
 	</dict>
@@ -858,7 +858,7 @@
 		<key>id</key>
 		<string>MCD</string>
 		<key>name</key>
-		<string>McDonald&#39;s Corp.</string>
+		<string>McDonald&apos;s Corp.</string>
 		<key>sector</key>
 		<string>goods</string>
 	</dict>
@@ -1081,6 +1081,106 @@
 		<string>Wells Fargo</string>
 		<key>sector</key>
 		<string>financials</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@Tesla</string>
+		<key>id</key>
+		<string>TSLA</string>
+		<key>name</key>
+		<string>Tesla Inc.</string>
+		<key>sector</key>
+		<string>industrials</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@CVSHealth</string>
+		<key>id</key>
+		<string>CVS</string>
+		<key>name</key>
+		<string>CVS Health Corporation</string>
+		<key>sector</key>
+		<string>healthcare</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@UnitedHealthGrp</string>
+		<key>id</key>
+		<string>UNH</string>
+		<key>name</key>
+		<string>UnitedHealth Group</string>
+		<key>sector</key>
+		<string>healthcare</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@McKesson</string>
+		<key>id</key>
+		<string>MCK</string>
+		<key>name</key>
+		<string>McKesson Corporation</string>
+		<key>sector</key>
+		<string>healthcare</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@Healthcare_ABC</string>
+		<key>id</key>
+		<string>ABC</string>
+		<key>name</key>
+		<string>AmerisourceBergen</string>
+		<key>sector</key>
+		<string>healthcare</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@Cigna</string>
+		<key>id</key>
+		<string>CI</string>
+		<key>name</key>
+		<string>Cigna Corporation</string>
+		<key>sector</key>
+		<string>healthcare</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@Costco</string>
+		<key>id</key>
+		<string>COST</string>
+		<key>name</key>
+		<string>Costco Wholesale Corp</string>
+		<key>sector</key>
+		<string>goods</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@cardinalhealth</string>
+		<key>id</key>
+		<string>CAH</string>
+		<key>name</key>
+		<string>Cardinal Health, Inc</string>
+		<key>sector</key>
+		<string>healthcare</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@MarathonPetroCo</string>
+		<key>id</key>
+		<string>MPC</string>
+		<key>name</key>
+		<string>Marathon Petroleum Corp</string>
+		<key>sector</key>
+		<string>energy</string>
+	</dict>
+	<dict>
+		<key>arobase</key>
+		<string>@LeviStraussCo</string>
+		<key>id</key>
+		<string>LEVI</string>
+		<key>name</key>
+		<string>Levi Strauss &amp; Co.</string>
+		<key>sector</key>
+		<string>goods</string>
 	</dict>
 </array>
 </plist>

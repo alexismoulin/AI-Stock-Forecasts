@@ -20,6 +20,8 @@ enum ArrowType: String, CaseIterable {
 
 struct Arrows: View {
     let blueType = Color.blue.opacity(0.8)
+    let greenType = Color.green.opacity(0.8)
+    let redType = Color.red.opacity(0.8)
     let grayType = Color.gray.opacity(0.5)
     var type: ArrowType
     var body: some View {
@@ -27,20 +29,19 @@ struct Arrows: View {
             VStack(spacing: 0) {
                 Triangle()
                     .rotation(Angle(degrees: 180))
-                    .fill(type == .up ? blueType : grayType)
+                    .fill(type == .up ? greenType : grayType)
                     .frame(width: geo.size.height * 0.5, height: geo.size.height * 0.25, alignment: .center)
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(type == .up ? blueType : grayType)
+                    .foregroundColor(type == .up ? greenType : grayType)
                     .frame(width: geo.size.height * 0.25, height: geo.size.height * 0.25, alignment: .center)
                     .padding(.bottom, 5)
                 Divider()
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(type == .down ? blueType : grayType)
+                    .foregroundColor(type == .down ? redType : grayType)
                     .frame(width: geo.size.height * 0.25, height: geo.size.height * 0.25, alignment: .center)
                     .padding(.top, 5)
                 Triangle()
-                    //.stroke(Color.black, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-                    .fill(type == .down ? blueType : grayType)
+                    .fill(type == .down ? redType : grayType)
                     .frame(width: geo.size.height * 0.5, height: geo.size.height * 0.25, alignment: .center)
             }
         }

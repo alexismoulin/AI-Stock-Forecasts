@@ -5,9 +5,12 @@ struct TopBottomView: View {
     let network = Networking()
     
     var sector: String
-    //var type: ArrowType
     var fetchRequest: FetchRequest<CustomCompany>
     var allCompanies: [Company]
+    
+    @State private var ready: Bool = false
+    @State private var progression: Double = 0.0
+    @State private var arrowType: ArrowType = .up
     
     init(sector: String, fetchRequest: FetchRequest<CustomCompany>) {
         self.sector = sector
@@ -18,10 +21,6 @@ struct TopBottomView: View {
             allCompanies.append(Company(id: custom.wrappedId, name: custom.wrappedName, arobase: custom.wrappedArobase, sector: custom.wrappedSector, custom: true))
         }
     }
-    
-    @State private var ready: Bool = false
-    @State private var progression: Double = 0.0
-    @State private var arrowType: ArrowType = .up
     
     var body: some View {
         ZStack {

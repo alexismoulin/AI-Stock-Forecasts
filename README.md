@@ -36,10 +36,6 @@ Then, I fetch the 20 most recent news articles about the company and use the fir
 
 Finally, I calculate a total score based on the sentiment analysis of those 140 comments
 
-## Animated demo of the app
-
-![app-presentation](https://user-images.githubusercontent.com/26531613/90067490-2ff90500-dcbd-11ea-9138-92c5ff26f94c.gif)
-
 ## Third Party components usage
 
 ### Fetching Twitter data
@@ -47,6 +43,9 @@ Swifter package from https://github.com/mattdonnelly/Swifter
 
 ### On the HomeScreen:
 Icons made by Icongeek26 from www.flaticon.com
+
+### On the SelectionScreen
+I used the custom picker from Stewart Lynch: https://www.youtube.com/watch?v=ATgOV70YcI8
 
 ### On the ResultScreen:
 I used the Circle Control code from this project:

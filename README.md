@@ -23,7 +23,7 @@ The latest versions (1.4 and up) use **Core Data** to let you add, manage and sa
 
 ## Quick presentation of the app
 
-![screenshot](https://user-images.githubusercontent.com/26531613/100556986-01a33380-3274-11eb-9199-6cbbc076f343.png)
+<img width="1161" alt="Screen Shot 2021-02-05 at 12 54 27 PM" src="https://user-images.githubusercontent.com/26531613/107070494-6e293a00-67b1-11eb-84a9-fd3d80ed8069.png">
 
 ## How does it work?
 
@@ -36,10 +36,6 @@ Then, I fetch the 20 most recent news articles about the company and use the fir
 
 Finally, I calculate a total score based on the sentiment analysis of those 140 comments
 
-## Animated demo of the app
-
-![app-presentation](https://user-images.githubusercontent.com/26531613/90067490-2ff90500-dcbd-11ea-9138-92c5ff26f94c.gif)
-
 ## Third Party components usage
 
 ### Fetching Twitter data
@@ -47,6 +43,9 @@ Swifter package from https://github.com/mattdonnelly/Swifter
 
 ### On the HomeScreen:
 Icons made by Icongeek26 from www.flaticon.com
+
+### On the SelectionScreen
+I used the custom picker from Stewart Lynch: https://www.youtube.com/watch?v=ATgOV70YcI8
 
 ### On the ResultScreen:
 I used the Circle Control code from this project:

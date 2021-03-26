@@ -23,32 +23,32 @@ func createDataPointArray(stockPriceArray: [Double], daysArray: [Int]) -> [DataP
 func parse(results: Chart) -> [DataPoint] {
     let rawStockPrices: [Double] = results.chart.result[0].indicators.quote[0].close
     let timeStamps: [Double] = results.chart.result[0].timestamp
-    //let roundedStockPrices: [Double] = roundStockPrices(stockPriceArray: stockPrices)
+    // let roundedStockPrices: [Double] = roundStockPrices(stockPriceArray: stockPrices)
     let dates: [Int] = formatTimeStamps(timeStampArray: timeStamps)
-    
+
     let dataPoints: [DataPoint] = createDataPointArray(stockPriceArray: rawStockPrices, daysArray: dates)
     return dataPoints
 }
 
 func getHistoricalData(stockSymbol: String, completion: @escaping ([DataPoint]) -> Void) {
-    
+
     let headers: [String: String] = [
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
         "x-rapidapi-key": Keys.rapidAPIKey
     ]
-    
+
+    // swiftlint:disable:next line_length
     let url: URL = NSURL(string: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-charts?region=US&symbol=\(stockSymbol)&interval=1d&range=1mo")! as URL
-    
+
     let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-    
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
-    
+
     var dataPoints: [DataPoint] = []
-    
+
     let session = URLSession.shared
-    let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
-        if (error == nil) {
+    let dataTask = session.dataTask(with: request as URLRequest) { (data, _, error) -> Void in
+        if error == nil {
             let decoder = JSONDecoder()
             if let safeData = data {
                 do {
@@ -58,7 +58,7 @@ func getHistoricalData(stockSymbol: String, completion: @escaping ([DataPoint]) 
                     print("ERROR RapidAPI --->>> ", error.localizedDescription)
                 }
             }
-            
+
         }
         completion(dataPoints)
     }

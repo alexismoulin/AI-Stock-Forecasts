@@ -3,7 +3,7 @@ import SwiftUI
 struct ButtonStyled: View {
     let text: String
     let color: Color
-    
+
     var body: some View {
         Text(text.uppercased())
             .font(.system(.headline))

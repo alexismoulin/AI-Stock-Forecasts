@@ -5,7 +5,7 @@ struct BarChart: View {
     let dataPoints: [DataPoint]
     let maxValue: Double
     let minValue: Double
-    
+
     init(dataPoints: [DataPoint]) {
         self.dataPoints = dataPoints
         let highestPoint = dataPoints.max { $0.value < $1.value }
@@ -13,7 +13,7 @@ struct BarChart: View {
         let lowestPoint = dataPoints.min { $0.value < $1.value }
         self.minValue = lowestPoint?.value ?? 0
     }
-    
+
     var body: some View {
         ZStack {
             VStack {
@@ -24,8 +24,8 @@ struct BarChart: View {
             }
             HStack {
                 VStack {
-                    ForEach((1...10).reversed(), id: \.self) { i in
-                        Text(String(Int(Double(i) * maxValue / 10)))
+                    ForEach((1...10).reversed(), id: \.self) { stockValue in
+                        Text(String(Int(Double(stockValue) * maxValue / 10)))
                             .padding(.horizontal)
                             .animation(nil)
                         Spacer()

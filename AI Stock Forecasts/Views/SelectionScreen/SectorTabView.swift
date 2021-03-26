@@ -2,11 +2,11 @@ import SwiftUI
 
 struct SectorTabView: View {
     @Environment(\.managedObjectContext) private var moc
-    
+
     var sector: String
-    
+
     let fetchRequest: FetchRequest<CustomCompany>
-    
+
     init(sector: String) {
         self.sector = sector
         fetchRequest = FetchRequest<CustomCompany>(
@@ -16,7 +16,7 @@ struct SectorTabView: View {
             animation: nil
         )
     }
-    
+
     var body: some View {
         TabView {
             SelectionView(sector: sector, fetchRequest: fetchRequest)
@@ -26,7 +26,7 @@ struct SectorTabView: View {
                 }
             TopBottomView(sector: sector, fetchRequest: fetchRequest)
                 .tabItem {
-                    Image(systemName: "chevron.up.chevron.down")
+                    Image(systemName: "arrow.up.arrow.down")
                     Text("Top Bottom 5")
                 }
             AddView(sector: sector)
@@ -44,6 +44,5 @@ struct SectorTabView: View {
         .navigationTitle("\(sector.capitalized)")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
-}
 
+}

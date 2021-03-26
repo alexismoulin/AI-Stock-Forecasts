@@ -2,21 +2,26 @@ import SwiftUI
 
 struct CustomPickerView: View {
     var items: [Company]
-    let layout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
-    //MARK: - States
+    let layout: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+
+    // MARK: States
     @State private var filteredItems: [Company] = []
     @State private var filterString: String = ""
     @State private var frameHeight: CGFloat = 400
-    
-    //MARK: - Bindings
+
+    // MARK: Bindings
     @Binding var pickerField: String
     @Binding var presentPicker: Bool
     @Binding var selectedCompanyId: String
 
-    //MARK: - Body
+    // MARK: Body
     var body: some View {
-        let filterBinding = Binding<String> (
+        let filterBinding = Binding<String>(
             get: { filterString },
             set: {
                 filterString = $0
@@ -33,11 +38,11 @@ struct CustomPickerView: View {
             VStack {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
-                        Button(action: {
+                        Button {
                             withAnimation {
                                 presentPicker = false
                             }
-                        }) {
+                        } label: {
                             Text("Cancel")
                         }
                         .padding(10)
@@ -47,19 +52,19 @@ struct CustomPickerView: View {
                     .foregroundColor(.white)
                     Text("Tap an entry to select it, or type in a new entry.")
                         .font(.caption)
-                        .padding(.leading,10)
+                        .padding(.leading, 10)
                     TextField("Filter by entering text", text: filterBinding)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
                     List {
                         ForEach(filteredItems) { item in
-                            Button(action: {
+                            Button {
                                 pickerField = item.name
                                 selectedCompanyId = item.id
                                 withAnimation {
                                     presentPicker = false
                                 }
-                            }) {
+                            } label: {
                                 HStack {
                                     Text("\(item.id) - \(item.name)")
                                     Spacer()
@@ -72,7 +77,7 @@ struct CustomPickerView: View {
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(10)
                 .frame(maxWidth: 400)
-                .padding(.horizontal,10)
+                .padding(.horizontal, 10)
                 .frame(height: frameHeight)
                 .padding(.top, 40)
                 /*
@@ -85,8 +90,8 @@ struct CustomPickerView: View {
                 .cornerRadius(10)
                 .frame(maxWidth: 400)
                 .padding(.horizontal,10)
- */
-                    
+                 */
+
                Spacer()
             }
         }
@@ -95,8 +100,8 @@ struct CustomPickerView: View {
             setHeight()
         }
     }
-    
-    //MARK: - Helper Functions
+
+    // MARK: Helper Functions
     fileprivate func setHeight() {
         withAnimation {
             if filteredItems.count > 5 {
@@ -108,7 +113,7 @@ struct CustomPickerView: View {
             }
         }
     }
-    
+
     func createMiniLogos(companyId: String) -> some View {
         Image(uiImage: UIImage(named: "#\(companyId)") ?? UIImage(named: "custom")!)
             .resizable()

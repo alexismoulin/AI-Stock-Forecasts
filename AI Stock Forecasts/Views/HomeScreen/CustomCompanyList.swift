@@ -1,10 +1,13 @@
 import SwiftUI
 
 struct CustomCompanyList: View {
-    
+
     @EnvironmentObject var dataController: DataController
-    @FetchRequest(entity: CustomCompany.entity(), sortDescriptors: []) var customCompanies: FetchedResults<CustomCompany>
-    
+    @FetchRequest(
+        entity: CustomCompany.entity(),
+        sortDescriptors: []
+    ) var customCompanies: FetchedResults<CustomCompany>
+
     var body: some View {
         VStack {
             SectionTitle(title: "Your custom companies", subTitle: "List of all the custom companies you created")

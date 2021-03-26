@@ -9,11 +9,11 @@ struct Bar: UIViewRepresentable {
         chart.data = addData()
         return chart
     }
-    
+
     func updateUIView(_ uiView: BarChartView, context: Context) {
         uiView.data = addData()
     }
-    
+
     func addData() -> BarChartData {
         let data = BarChartData()
         let dataSet = BarChartDataSet(entries: entries)
@@ -22,7 +22,7 @@ struct Bar: UIViewRepresentable {
         data.addDataSet(dataSet)
         return data
     }
-    
+
     typealias UIViewType = BarChartView
-    
+
 }

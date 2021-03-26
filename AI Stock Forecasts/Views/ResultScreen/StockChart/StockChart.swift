@@ -2,26 +2,26 @@ import SwiftUI
 import Charts
 
 struct StockChart: View {
-    
+
     var stockSymbol: String
-    
+
     @State var stockPrices: [Double] = []
-    
+
     func createBarChart(stocks: [Double]) -> some View {
         var stockEntries = [BarChartDataEntry]()
-        for i in 0..<stocks.count {
-            stockEntries.append(BarChartDataEntry(x: Double(i), y: stocks[i]))
+        for stockValue in 0..<stocks.count {
+            stockEntries.append(BarChartDataEntry(x: Double(stockValue), y: stocks[stockValue]))
         }
         return Bar(entries: stockEntries)
     }
-    
+
     var body: some View {
         return VStack {
             Text("Daily stock chart for the last 20 days")
                 .font(.headline)
                 .fontWeight(.semibold)
                 .padding(.bottom, 5)
-            
+
             HStack(alignment: .center, spacing: 0) {
                 Text("Current stock price for ")
                     .font(.subheadline)
@@ -47,9 +47,7 @@ struct StockChart: View {
         }.onAppear { getHistoricalData(stockSymbol: stockSymbol) { results in
             stockPrices = results.map { $0.value }
         }
-        
+
         }
     }
 }
-
-

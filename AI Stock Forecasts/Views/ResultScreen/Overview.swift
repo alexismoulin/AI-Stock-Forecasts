@@ -10,7 +10,7 @@ struct Overview: View {
         format.dateFormat = "yyyy-MM-dd"
         formattedDate = format.string(from: date)
     }
-    
+
     var body: some View {
         HStack {
             Image(company.hash)
@@ -25,7 +25,7 @@ struct Overview: View {
                 Text("Symbol: \(company.id)").font(.subheadline)
             }.padding(5)
         }.frame(maxWidth: .infinity, maxHeight: 120).background(Color(UIColor.lightGray))
-        
+
     }
 }
 

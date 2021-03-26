@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ResultView: View {
-    
+
     @State var selectedSegment: Segment?
-    
+
     var company: Company
-    
+
     // MARK: - Screen Body
-    
+
     var body: some View {
         GeometryReader { geometry in
             let circleRadius = geometry.size.height / 2.0
@@ -15,7 +15,10 @@ struct ResultView: View {
                 Color.background.edgesIgnoringSafeArea(.vertical)
                 ScrollView {
                     VStack(alignment: .center) {
-                        SectionTitle(title: "Stock Forecast Score", subTitle: "Score based on company sentiment analysis")
+                        SectionTitle(
+                            title: "Stock Forecast Score",
+                            subTitle: "Score based on company sentiment analysis"
+                        )
                         createCircleControl(radius: circleRadius)
                         createDescription()
                         Divider()
@@ -28,9 +31,9 @@ struct ResultView: View {
         .navigationTitle(company.name)
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     // MARK: - Components
-    
+
     private func createDescription() -> some View {
         return Group {
             Text(selectedSegment?.title ?? "")
@@ -48,44 +51,44 @@ struct ResultView: View {
             .lineLimit(3)
         }
     }
-    
+
     private func createCircleControl(radius: CGFloat) -> some View {
-        //let totalBalance: Double = 200
+        // let totalBalance: Double = 200
         let segments: [Segment] = [
             Segment(
                 color: Color.red.opacity(0.8),
                 amount: 0,
                 title: "Very Negative Outcome",
-                description: "The company and the stock have very negative feedbacks - The value of the stock is likely to decrease in the near future"),
+                description: "The company and the stock have very negative feedbacks - The value of the stock is likely to decrease in the near future"), // swiftlint:disable:this line_length
             Segment(
                 color: Color.orange.opacity(0.8),
                 amount: 40,
                 title: "Slightly Negative Outcome",
-                description: "The company and the stock have slightly negative feedbacks - The value of the stock may decrease slightly in the near future"),
+                description: "The company and the stock have slightly negative feedbacks - The value of the stock may decrease slightly in the near future"), // swiftlint:disable:this line_length
             Segment(
                 color: Color.yellow.opacity(0.8),
                 amount: 80,
                 title: "Stable Outcome",
-                description: "The company and the stock have neutral feedbacks - The value of the stock is likely to stay stable in the near future"),
+                description: "The company and the stock have neutral feedbacks - The value of the stock is likely to stay stable in the near future"), // swiftlint:disable:this line_length
             Segment(
                 color: Color.green.opacity(0.8),
                 amount: 120,
                 title: "Slightly Positive Outcome",
-                description: "The company and the stock have slightly positive feedbacks - The value of the stock may increase slightly in the near future"),
+                description: "The company and the stock have slightly positive feedbacks - The value of the stock may increase slightly in the near future"), // swiftlint:disable:this line_length
             Segment(
                 color: Color.blue.opacity(0.8),
                 amount: 160,
                 title: "Very Positive Outcome",
-                description: "The company and the stock have very positive feedbacks - The value of the stock is likely to increase slightly in the near future")
+                description: "The company and the stock have very positive feedbacks - The value of the stock is likely to increase slightly in the near future") // swiftlint:disable:this line_length
         ]
-        
+
         let circleControl = CircleControl(segments: segments, selectedSegment: $selectedSegment, company: company)
-        
+
         return circleControl
             .frame(width: radius, height: radius)
             .padding(16.0)
     }
-    
+
     // MARK: - Debug
     private func createDebug() -> some View {
         HStack {
@@ -94,5 +97,5 @@ struct ResultView: View {
             Text("news: \(company.newsScore) |")
          }
     }
-    
+
 }

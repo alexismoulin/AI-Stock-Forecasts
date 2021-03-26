@@ -5,15 +5,15 @@ struct AddView: View {
     @State private var symbol: String = ""
     @State private var name: String = ""
     @State private var arobase: String = ""
-    
+
     @EnvironmentObject var dataController: DataController
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentation
-    
+
     var notReady: Bool {
         symbol.isEmpty || name.isEmpty || arobase.first != "@"
     }
-    
+
     var body: some View {
         ZStack {
             Form {
@@ -34,7 +34,9 @@ struct AddView: View {
                     dataController.save()
                     presentation.wrappedValue.dismiss()
                 } label: {
-                    notReady ? ButtonStyled(text: "Not Ready", color: Color.gray.opacity(0.5)) : ButtonStyled(text: "Add", color: .blue)
+                    notReady ?
+                        ButtonStyled(text: "Not Ready", color: Color.gray.opacity(0.5))
+                        : ButtonStyled(text: "Add", color: .blue)
                 }
                 .disabled(notReady)
                 .padding(.bottom, 20)
@@ -42,4 +44,3 @@ struct AddView: View {
         }
     }
 }
-

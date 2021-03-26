@@ -10,7 +10,7 @@ struct QuoteInformations: Codable {
 
 struct Indicators: Codable {
     let indicators: QuoteInformations
-    let timestamp : [Double]
+    let timestamp: [Double]
 }
 
 struct ResultInformations: Codable {

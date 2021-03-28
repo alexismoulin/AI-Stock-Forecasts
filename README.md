@@ -12,6 +12,10 @@
     <img src="https://user-images.githubusercontent.com/26531613/94211816-85215c80-fea0-11ea-9056-45128e1c4c55.png" height="25%" width="25%">
   </a>
  <p/>
+ <p align="center">
+    <img src="https://img.shields.io/badge/iOS-14.0+-blue.svg" />
+    <img src="https://img.shields.io/badge/Swift-5.3-brightgreen.svg" />
+</p>
 
 &nbsp;
 

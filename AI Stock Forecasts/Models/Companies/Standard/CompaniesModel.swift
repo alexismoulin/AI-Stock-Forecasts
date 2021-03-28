@@ -32,7 +32,6 @@ struct CompaniesModel {
             }
             return companyList
         }
-        print("getSector failed")
         return nil
     }
 }

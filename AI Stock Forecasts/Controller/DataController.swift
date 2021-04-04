@@ -39,4 +39,11 @@ class DataController: ObservableObject {
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
+
+    /// Count the number of elements (generic) in the Core data stack
+    /// - Parameter fetchRequest: Fetch request on a generic type
+    /// - Returns: Number of elements
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+        (try? container.viewContext.count(for: fetchRequest)) ?? 0
+    }
 }

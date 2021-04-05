@@ -52,8 +52,8 @@ struct EditView: View {
                         ForEach(Sector.allCases, id: \.self) { sector in
                             Text(sector.rawValue.capitalized)
                         }
-                    }) :
-                    AnyView(Text(company.wrappedSector.capitalized))
+                    }.accessibilityLabel("\(sector.rawValue)"))
+                    : AnyView(Text(company.wrappedSector.capitalized))
             }
             Section(header: Text("Modify or Delete")) {
                 // Modify Button in display mode or Cancel Button in modification mode
@@ -73,6 +73,7 @@ struct EditView: View {
                         company.sector = sector.rawValue
                         dataController.save()
                         modificationMode = false
+                        presentation.wrappedValue.dismiss()
                     }.foregroundColor(.green) :
                     Button("Delete") {
                         showingAlert = true

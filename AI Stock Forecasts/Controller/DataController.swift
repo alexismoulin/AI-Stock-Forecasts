@@ -19,11 +19,17 @@ class DataController: ObservableObject {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
 
-        container.loadPersistentStores(completionHandler: { (_, error) in
+        container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error.localizedDescription), \(error.userInfo)")
             }
-        })
+
+            #if DEBUG
+            if CommandLine.arguments.contains("enable-testing") {
+                self.deleteAll()
+            }
+            #endif
+        }
     }
 
     /// Saves our Core Data context iff there is any changes. This silently ignores any error
@@ -45,5 +51,12 @@ class DataController: ObservableObject {
     /// - Returns: Number of elements
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
+    }
+
+    /// Deletes all custom companies from the core Data stack
+    func deleteAll() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = CustomCompany.fetchRequest()
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        _ = try? container.viewContext.execute(batchDeleteRequest)
     }
 }

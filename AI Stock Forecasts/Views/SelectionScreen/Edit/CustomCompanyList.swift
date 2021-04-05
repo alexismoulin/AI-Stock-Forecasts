@@ -11,6 +11,7 @@ struct CustomCompanyList: View {
     var body: some View {
         VStack {
             SectionTitle(title: "Your custom companies", subTitle: "List of all the custom companies you created")
+            Section {
             List(customCompanies) { company in
                 NavigationLink(destination: EditView(company: company)) {
                     HStack {
@@ -18,8 +19,9 @@ struct CustomCompanyList: View {
                         Spacer()
                         Text(company.wrappedId)
                     }
-                }
+                }.accessibilityLabel(company.wrappedName)
             }
+        }
         }
     }
 }

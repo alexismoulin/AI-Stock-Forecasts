@@ -6,14 +6,6 @@ struct TabNavigationView: View {
     var sector: String
     let fetchRequest: FetchRequest<CustomCompany>
 
-    var addProjectToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            NavigationLink(destination: EditView(company: nil)) {
-                Label("Add Company", systemImage: "plus")
-            }
-        }
-    }
-
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
@@ -46,7 +38,7 @@ struct TabNavigationView: View {
             .navigationTitle(selectedTab == 3 ? "Your custom companies" : "\(sector.capitalized)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                addProjectToolbarItem
+                addCompanyToolbarItem
             }
         }
     }

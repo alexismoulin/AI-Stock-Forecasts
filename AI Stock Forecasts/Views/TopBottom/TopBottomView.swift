@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TopBottomView: View {
 
+    // MARK: - Properties
+
     let network = Networking()
 
     var sector: String
@@ -11,6 +13,10 @@ struct TopBottomView: View {
     @State private var ready: Bool = false
     @State private var progression: Double = 0.0
     @State private var arrowType: ArrowType = .up
+
+    @Environment(\.horizontalSizeClass) var sizeClass
+
+    // MARK: - Custom init
 
     init(sector: String, fetchRequest: FetchRequest<CustomCompany>) {
         self.sector = sector
@@ -29,6 +35,8 @@ struct TopBottomView: View {
         }
     }
 
+// MARK: - body
+
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.vertical)
@@ -39,13 +47,7 @@ struct TopBottomView: View {
                         "Best stock outcomes for the sector"
                         : "Worst stock outcomes for the sector"
                 )
-                Picker(selection: $arrowType, label: Text("Arrow label")) {
-                    ForEach(ArrowType.allCases, id: \.self) {
-                        Text($0.rawValue.capitalized)
-                    }
-                }
-                .padding()
-                .pickerStyle(SegmentedPickerStyle())
+                createSegmentedPicker()
                 Spacer()
                 Arrows(type: arrowType)
                 Spacer()
@@ -56,6 +58,23 @@ struct TopBottomView: View {
         }
         .navigationTitle("\(sector.capitalized)")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            addCompanyToolbarItem
+        }
+    }
+
+    // MARK: - Component functions
+
+    private func createSegmentedPicker() -> some View {
+        Picker(selection: $arrowType, label: Text("Arrow label")) {
+            ForEach(ArrowType.allCases, id: \.self) {
+                Text($0.rawValue.capitalized)
+                    .font(.largeTitle)
+            }
+        }
+        .padding(.vertical)
+        .padding(.horizontal, sizeClass == .compact ? 12 : 60)
+        .pickerStyle(SegmentedPickerStyle())
     }
 
     private func createButtons() -> some View {
@@ -64,7 +83,7 @@ struct TopBottomView: View {
         let buttonBeforePredict = ButtonStyled(text: "not ready", color: Color.gray.opacity(0.5))
         let buttonAfterPredict = ButtonStyled(text: "results", color: Color.blue)
 
-        return HStack(spacing: 16.0) {
+        return HStack(spacing: sizeClass == .compact ? 16 : 50) {
 
             Button {
                 for company in allCompanies {

@@ -62,6 +62,7 @@
 		5EB4111226267A100088961E /* SideBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4111126267A100088961E /* SideBarNavigationView.swift */; };
 		5EB4111726267B3A0088961E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4111626267B3A0088961E /* ContentView.swift */; };
 		5EB411262626874A0088961E /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB411252626874A0088961E /* Sector.swift */; };
+		5EB5157D262B6F5600500872 /* ToolbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5157C262B6F5600500872 /* ToolbarItems.swift */; };
 		5EB5FEAF261142AF0041497F /* ForecastsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEAE261142AF0041497F /* ForecastsTests.swift */; };
 		5EB5FEB92611446C0041497F /* CompanyPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEB82611446C0041497F /* CompanyPlistTests.swift */; };
 		5ECA898A25929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */; };
@@ -143,6 +144,7 @@
 		5EB4111126267A100088961E /* SideBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarNavigationView.swift; sourceTree = "<group>"; };
 		5EB4111626267B3A0088961E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5EB411252626874A0088961E /* Sector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
+		5EB5157C262B6F5600500872 /* ToolbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItems.swift; sourceTree = "<group>"; };
 		5EB5FEAC261142AF0041497F /* ForecastsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB5FEAE261142AF0041497F /* ForecastsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsTests.swift; sourceTree = "<group>"; };
 		5EB5FEB0261142AF0041497F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				5EA69AB1262B1BB900DE4A3C /* BackgroundEffect.swift */,
 				5E25B5C525190FD200138E61 /* ButtonStyled.swift */,
 				5E2B9DE52531102A001DC30D /* SectionTitle.swift */,
+				5EB5157C262B6F5600500872 /* ToolbarItems.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				5ECA898A25929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift in Sources */,
 				5E25B5E025190FDC00138E61 /* TextClassifier2.mlmodel in Sources */,
 				5E08FAB0252A9C2700DC586A /* Company.swift in Sources */,
+				5EB5157D262B6F5600500872 /* ToolbarItems.swift in Sources */,
 				5E4E20A92614195800D314C0 /* Bundle-Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

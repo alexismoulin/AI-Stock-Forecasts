@@ -22,9 +22,11 @@ struct SideBarNavigationView: View {
                     Label("Edit Companies", systemImage: "square.and.pencil")
                 }.tag("3")
             }
+            .colorScheme(.light)
             .navigationTitle("\(sector.capitalized)")
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(SidebarListStyle())
+
             PlaceholderView()
         }
     }

@@ -22,6 +22,10 @@ struct HomeView: View {
                     }
                 }
             }
-        }.navigationTitle("Select a sector")
+        }
+        .navigationTitle("Select a sector")
+        .toolbar {
+            addCompanyToolbarItem
+        }
     }
 }

@@ -2,13 +2,20 @@ import SwiftUI
 
 struct SelectionView: View {
 
-    let network = Networking()
-
-    // MARK: - Variables
+    // MARK: - Properties
 
     var sector: String
     var fetchRequest: FetchRequest<CustomCompany>
     var allCompanies: [Company]
+    let network = Networking()
+
+    @Environment(\.horizontalSizeClass) var sizeClass
+    @State private var selectedCompanyId: String = ""
+    @State private var ready: Bool = false
+    @State private var progression: Double = 0.0
+    @State private var presentPicker: Bool = false
+    @State private var fieldString: String = ""
+    @State private var tag: Int = 1
 
     // MARK: - Custom init
 
@@ -30,15 +37,6 @@ struct SelectionView: View {
             $0.name < $1.name
         }
     }
-
-    // MARK: - States
-
-    @State private var selectedCompanyId: String = ""
-    @State private var ready: Bool = false
-    @State private var progression: Double = 0.0
-    @State private var presentPicker: Bool = false
-    @State private var fieldString: String = ""
-    @State private var tag: Int = 1
 
     // MARK: - Screen body
 
@@ -70,6 +68,9 @@ struct SelectionView: View {
         }
         .navigationTitle("\(sector.capitalized)")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            addCompanyToolbarItem
+        }
     }
 
     // MARK: - Components
@@ -93,7 +94,7 @@ struct SelectionView: View {
         let buttonAfterPredict = ButtonStyled(text: "results", color: Color.blue)
         let selectedCompany: Company = allCompanies.first(where: { $0.id == selectedCompanyId }) ?? allCompanies[0]
 
-        return HStack(spacing: 16.0) {
+        return HStack(spacing: sizeClass == .compact ? 16 : 50) {
             Button {
                 network.fetchTweets1(company: selectedCompany.arobase) { arobaseScore in
                     progression = 0.3

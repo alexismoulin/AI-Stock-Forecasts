@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct CustomPickerView: View {
+
+    // MARK: - Properties
+
     var items: [Company]
     let layout: [GridItem] = [
         GridItem(.flexible()),
@@ -9,7 +12,6 @@ struct CustomPickerView: View {
         GridItem(.flexible())
     ]
 
-    // MARK: States
     @State private var filteredItems: [Company] = []
     @State private var filterString: String = ""
     @State private var frameHeight: CGFloat = 400
@@ -19,7 +21,9 @@ struct CustomPickerView: View {
     @Binding var presentPicker: Bool
     @Binding var selectedCompanyId: String
 
-    // MARK: Body
+    @Environment(\.horizontalSizeClass) var sizeClass
+
+    // MARK: - Body
     var body: some View {
         let filterBinding = Binding<String>(
             get: { filterString },
@@ -76,21 +80,10 @@ struct CustomPickerView: View {
                 }
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(10)
-                .frame(maxWidth: 400)
+                .frame(maxWidth: sizeClass == .compact ? 400 : 800)
                 .padding(.horizontal, 10)
                 .frame(height: frameHeight)
                 .padding(.top, 40)
-                /*
-                LazyVGrid(columns: layout, spacing: 2) {
-                    ForEach(Sector.allCases, id: \.self) { sector in
-                        Tile2(sector: sector.rawValue, size: 50).padding(.vertical, 5)
-                    }
-                }
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(10)
-                .frame(maxWidth: 400)
-                .padding(.horizontal,10)
-                 */
 
                Spacer()
             }

@@ -26,6 +26,10 @@ struct CustomCompanyList: View {
                         .accessibilityLabel(company.wrappedName)
                     }
                 }
-            }.navigationTitle("Your custom companies")
+            }
+            .navigationTitle("Your custom companies")
+            .toolbar {
+                addCompanyToolbarItem
+            }
     }
 }

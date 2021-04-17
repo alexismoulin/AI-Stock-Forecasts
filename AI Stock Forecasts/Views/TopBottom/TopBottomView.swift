@@ -54,7 +54,6 @@ struct TopBottomView: View {
                 ProgressView(value: progression, total: 1.0).padding(5)
             }
         }
-        .colorScheme(.light)
         .navigationTitle("\(sector.capitalized)")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -76,9 +75,6 @@ struct TopBottomView: View {
                                 company.arobaseScore = arobaseScore
                                 company.hashScore = hashScore
                                 company.newsScore = newsScore
-                                /*companyScoreArray.sort {
-                                    $0.totalScore > $1.totalScore
-                                }*/
                                 ready = (progression > 0.999)
                             }
                         }
@@ -102,5 +98,4 @@ struct TopBottomView: View {
             }))
         }
     }
-
 }

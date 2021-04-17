@@ -10,6 +10,8 @@ struct SelectionView: View {
     var fetchRequest: FetchRequest<CustomCompany>
     var allCompanies: [Company]
 
+    // MARK: - Custom init
+
     init(sector: String, fetchRequest: FetchRequest<CustomCompany>) {
         self.sector = sector
         self.fetchRequest = fetchRequest
@@ -66,7 +68,6 @@ struct SelectionView: View {
                 ).zIndex(1.0)
             }
         }
-        .colorScheme(.light)
         .navigationTitle("\(sector.capitalized)")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -93,7 +94,6 @@ struct SelectionView: View {
         let selectedCompany: Company = allCompanies.first(where: { $0.id == selectedCompanyId }) ?? allCompanies[0]
 
         return HStack(spacing: 16.0) {
-
             Button {
                 network.fetchTweets1(company: selectedCompany.arobase) { arobaseScore in
                     progression = 0.3
@@ -111,7 +111,6 @@ struct SelectionView: View {
             } label: {
                 predictButton
             }
-
             NavigationLink(destination: ResultView(company: selectedCompany)) {
                 ready ? buttonAfterPredict : buttonBeforePredict
             }
@@ -122,5 +121,4 @@ struct SelectionView: View {
             }))
         }
     }
-
 }

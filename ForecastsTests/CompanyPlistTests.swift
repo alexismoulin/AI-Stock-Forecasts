@@ -9,7 +9,7 @@ class CompanyPlistTests: XCTestCase {
     }
 
     func testGetCompaniesFromSector() {
-        for sector in Sector.allCases {
+        for sector in SectorEnum.allCases {
             let companiesBySector = CompaniesModel.getAllCompaniesFromSector(for: sector.rawValue)
             XCTAssertNotNil(companiesBySector, "Not able to load companies for sector: \(sector)")
 

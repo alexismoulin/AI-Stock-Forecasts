@@ -4,6 +4,7 @@ import SwiftUI
 // swiftlint:disable:next type_name
 struct AI_Stock_ForecastsApp: App {
     @StateObject var dataController: DataController
+    @AppStorage("sector") var sector: String = SectorEnum.industrials.rawValue
 
     init() {
         let dataController = DataController()
@@ -12,7 +13,7 @@ struct AI_Stock_ForecastsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ContentView(sector: sector)
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
         }

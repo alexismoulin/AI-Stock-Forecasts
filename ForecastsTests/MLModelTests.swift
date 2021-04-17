@@ -74,37 +74,4 @@ class MLModelTests: XCTestCase {
         }
         XCTAssertLessThan(negativeScore, 0, "Negative comments - got a score of: \(negativeScore)")
     }
-
-    func testBaseModelPerformance() {
-        let model1 = Model1()
-        var comments = [TextClassifier1Input]()
-        let bundle = Bundle(for: MLModelTests.self)
-        let data = bundle.decode([String].self, from: "IMDBDataset100.json")
-
-        for comment in data {
-            comments.append(TextClassifier1Input(text: comment))
-        }
-        XCTAssertEqual(comments.count, 100, "Got \(data.count) comments")
-
-        measure {
-            _ = model1.makePrediction1(with: comments)
-        }
-    }
-
-    func testAppleModelPerformance() {
-        let tagger = NLTagger(tagSchemes: [.sentimentScore])
-        let bundle = Bundle(for: MLModelTests.self)
-        let data = bundle.decode([String].self, from: "IMDBDataset100.json")
-
-        measure {
-            for comment in data {
-                tagger.string = comment
-                _ = tagger.tag(
-                    at: comment.startIndex,
-                    unit: .paragraph,
-                    scheme: .sentimentScore
-                )
-            }
-        }
-    }
 }

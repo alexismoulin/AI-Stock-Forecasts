@@ -250,6 +250,7 @@
 				5E25B5C525190FD200138E61 /* ButtonStyled.swift */,
 				5E2B9DE52531102A001DC30D /* SectionTitle.swift */,
 				5EB5157C262B6F5600500872 /* ToolbarItems.swift */,
+				5E9FC5A025CB690200B3B978 /* Overview.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -258,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				5E25B5CA25190FD200138E61 /* ResultView.swift */,
-				5E9FC5A025CB690200B3B978 /* Overview.swift */,
 				5E25B5C725190FD200138E61 /* CircleControl */,
 				5E25B5CB25190FD200138E61 /* StockChart */,
 			);

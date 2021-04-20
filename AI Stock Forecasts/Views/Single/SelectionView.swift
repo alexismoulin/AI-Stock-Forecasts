@@ -4,10 +4,13 @@ struct SelectionView: View {
 
     // MARK: - Properties
 
+    let network = Networking()
     var sector: String
     var fetchRequest: FetchRequest<CustomCompany>
     var allCompanies: [Company]
-    let network = Networking()
+    var selectedCompany: Company {
+        allCompanies.first(where: { $0.id == selectedCompanyId }) ?? allCompanies[0]
+    }
 
     @Environment(\.horizontalSizeClass) var sizeClass
     @State private var selectedCompanyId: String = ""
@@ -52,6 +55,7 @@ struct SelectionView: View {
                 )
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                Overview(company: selectedCompany)
                 Spacer()
                 Divider()
                 createButtons().padding(.top, 5)
@@ -92,7 +96,6 @@ struct SelectionView: View {
         let predictButton = ButtonStyled(text: "forecast", color: Color.black)
         let buttonBeforePredict = ButtonStyled(text: "not ready", color: Color.gray.opacity(0.5))
         let buttonAfterPredict = ButtonStyled(text: "results", color: Color.blue)
-        let selectedCompany: Company = allCompanies.first(where: { $0.id == selectedCompanyId }) ?? allCompanies[0]
 
         return HStack(spacing: sizeClass == .compact ? 16 : 50) {
             Button {

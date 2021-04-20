@@ -13,19 +13,25 @@ struct Overview: View {
 
     var body: some View {
         HStack {
-            Image(company.hash)
+            Image(uiImage: UIImage(named: company.hash) ?? UIImage(named: "custom")!)
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: 100, maxHeight: 100)
                 .padding(5)
-                .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.background))
+                .background(Color.background)
+                .cornerRadius(5)
                 .padding(5)
             VStack(alignment: .leading) {
-                Text("\(company.name)").font(.title).fontWeight(.bold)
-                Text("Symbol: \(company.id)").font(.subheadline)
+                Text("\(company.name)")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("Symbol: \(company.id)")
+                    .font(.subheadline)
             }.padding(5)
         }.frame(maxWidth: .infinity, maxHeight: 120).background(Color(UIColor.lightGray))
-
+        .cornerRadius(10)
+        .padding(.horizontal, 5)
+        .shadow(radius: 3)
     }
 }
 

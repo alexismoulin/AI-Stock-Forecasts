@@ -38,7 +38,11 @@ struct CustomPickerView: View {
             }
         )
         return ZStack {
-            Color.black.opacity(0.4)
+            Color.black.opacity(0.4).onTapGesture {
+                withAnimation {
+                    presentPicker = false
+                }
+            }
             VStack {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {

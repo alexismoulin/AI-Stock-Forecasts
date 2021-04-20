@@ -21,6 +21,11 @@ struct SideBarNavigationView: View {
                 NavigationLink(destination: CustomCompanyList()) {
                     Label("Edit Companies", systemImage: "square.and.pencil")
                 }.tag("3")
+                /*
+                NavigationLink(destination: DebugView()) {
+                    Label("Debug", systemImage: "ladybug")
+                }.tag("3")
+                */
             }
             .colorScheme(.light)
             .navigationTitle("\(sector.capitalized)")

@@ -59,4 +59,40 @@ class DataController: ObservableObject {
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         _ = try? container.viewContext.execute(batchDeleteRequest)
     }
+
+    /// Creates dummy data used for app screenshots on the Apple Store
+    func createDummyData() {
+
+        let vow = CustomCompany(context: container.viewContext)
+        vow.id = "VOW.DE"
+        vow.name = "VolksWagen"
+        vow.arobase = "@VolksWagen"
+        vow.sector = "industrials"
+
+        let btc = CustomCompany(context: container.viewContext)
+        btc.id = "BTC-USD"
+        btc.name = "Bitcoin USD"
+        btc.arobase = "@bitcoin"
+        btc.sector = "financials"
+
+        let fubo = CustomCompany(context: container.viewContext)
+        fubo.id = "FUBO"
+        fubo.name = "FuboTV Inc."
+        fubo.arobase = "@fubo"
+        fubo.sector = "telecom-media"
+
+        let levi = CustomCompany(context: container.viewContext)
+        levi.id = "LEVI"
+        levi.name = "Levi Strauss & Co."
+        levi.arobase = "@levi"
+        levi.sector = "goods"
+
+        let airbus = CustomCompany(context: container.viewContext)
+        airbus.id = "AIR.PA"
+        airbus.name = "Airbus"
+        airbus.arobase = "@Airbus"
+        airbus.sector = "industrials"
+
+        save()
+    }
 }

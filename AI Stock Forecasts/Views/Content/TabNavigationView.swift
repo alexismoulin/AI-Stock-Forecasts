@@ -33,6 +33,14 @@ struct TabNavigationView: View {
                         Image(systemName: "square.and.pencil")
                         Text("Edit Companies")
                     }
+                /*
+                DebugView()
+                    .tag(4)
+                    .tabItem {
+                        Image(systemName: "ladybug")
+                        Text("Debug")
+                    }
+                */
             }
             .colorScheme(.light)
             .navigationTitle(selectedTab == 3 ? "Your custom companies" : "\(sector.capitalized)")

@@ -63,6 +63,7 @@
 		5EB4111726267B3A0088961E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4111626267B3A0088961E /* ContentView.swift */; };
 		5EB411262626874A0088961E /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB411252626874A0088961E /* Sector.swift */; };
 		5EB5157D262B6F5600500872 /* ToolbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5157C262B6F5600500872 /* ToolbarItems.swift */; };
+		5EB51585262BBBBA00500872 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB51584262BBBBA00500872 /* DebugView.swift */; };
 		5EB5FEAF261142AF0041497F /* ForecastsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEAE261142AF0041497F /* ForecastsTests.swift */; };
 		5EB5FEB92611446C0041497F /* CompanyPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEB82611446C0041497F /* CompanyPlistTests.swift */; };
 		5ECA898A25929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */; };
@@ -145,6 +146,7 @@
 		5EB4111626267B3A0088961E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5EB411252626874A0088961E /* Sector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		5EB5157C262B6F5600500872 /* ToolbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItems.swift; sourceTree = "<group>"; };
+		5EB51584262BBBBA00500872 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		5EB5FEAC261142AF0041497F /* ForecastsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB5FEAE261142AF0041497F /* ForecastsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsTests.swift; sourceTree = "<group>"; };
 		5EB5FEB0261142AF0041497F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				5E8F0FD526101F6000A7CABF /* Edit */,
 				5E25B5C625190FD200138E61 /* ResultScreen */,
 				5E25B5C425190FD200138E61 /* SharedComponents */,
+				5EB51584262BBBBA00500872 /* DebugView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				5E25B5BF25190FC000138E61 /* Secret.swift in Sources */,
 				5E25B5E325190FDC00138E61 /* CompaniesModel.swift in Sources */,
 				5EB411262626874A0088961E /* Sector.swift in Sources */,
+				5EB51585262BBBBA00500872 /* DebugView.swift in Sources */,
 				5E84915A251AE1C3001AD6F0 /* News.swift in Sources */,
 				5E66CCDA2534C75E004E9274 /* Networking.swift in Sources */,
 				5E9BC4B0251E686000329625 /* TabNavigationView.swift in Sources */,

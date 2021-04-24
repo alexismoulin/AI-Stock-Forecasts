@@ -1,22 +1,12 @@
 import SwiftUI
 
 struct DataPoint: Identifiable {
-    let id: Int
+    let id = UUID()
     let value: Double
-    let color: Color
-    let title: String
+    let title: Int
 
-    init(value: Double, color: Color, title: String = "") {
-        self.id = Int.random(in: 1..<Int.max)
+    init(value: Double, title: Int = 0) {
         self.value = value
-        self.color = color
-        self.title = title
-    }
-
-    init(id: Int, value: Double, color: Color, title: String = "") {
-        self.id = id
-        self.value = value
-        self.color = color
         self.title = title
     }
 }

@@ -15,7 +15,7 @@ func createDataPointArray(stockPriceArray: [Double], daysArray: [Int]) -> [DataP
     var dataPoints: [DataPoint] = []
     let zipped: Zip2Sequence<[Double], [Int]> = zip(stockPriceArray, daysArray)
     for element in zipped {
-        dataPoints.append(DataPoint(value: element.0, color: .green, title: String(element.1)))
+        dataPoints.append(DataPoint(value: element.0, title: element.1))
     }
     return dataPoints
 }

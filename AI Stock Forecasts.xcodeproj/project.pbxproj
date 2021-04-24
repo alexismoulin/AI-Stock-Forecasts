@@ -15,7 +15,6 @@
 		5E0BF89D256CAEB300A5E2C9 /* CustomCompanyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BF89C256CAEB300A5E2C9 /* CustomCompanyList.swift */; };
 		5E1561032533BB3F009A0158 /* Arrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1561022533BB3F009A0158 /* Arrows.swift */; };
 		5E161A9425964A3B0006DD13 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E161A9325964A3B0006DD13 /* DataPoint.swift */; };
-		5E161A9725964A990006DD13 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E161A9625964A990006DD13 /* BarChart.swift */; };
 		5E21C93A25BCEA51007DAA82 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21C93925BCEA51007DAA82 /* CustomPickerView.swift */; };
 		5E21C93D25BCEA65007DAA82 /* CustomPickerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21C93C25BCEA65007DAA82 /* CustomPickerTextView.swift */; };
 		5E25B5AE25190E3D00138E61 /* AI_Stock_ForecastsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5AD25190E3D00138E61 /* AI_Stock_ForecastsApp.swift */; };
@@ -97,7 +96,6 @@
 		5E0BF89C256CAEB300A5E2C9 /* CustomCompanyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCompanyList.swift; sourceTree = "<group>"; };
 		5E1561022533BB3F009A0158 /* Arrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrows.swift; sourceTree = "<group>"; };
 		5E161A9325964A3B0006DD13 /* DataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
-		5E161A9625964A990006DD13 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		5E21C93925BCEA51007DAA82 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E21C93C25BCEA65007DAA82 /* CustomPickerTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerTextView.swift; sourceTree = "<group>"; };
 		5E25B5AA25190E3D00138E61 /* AI Stock Forecasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Stock Forecasts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				5E25B5CC25190FD200138E61 /* StockChart.swift */,
-				5E161A9625964A990006DD13 /* BarChart.swift */,
 				5E7120AB253E58FF00D4C698 /* Bar.swift */,
 			);
 			path = StockChart;
@@ -652,7 +649,6 @@
 				5EF48E72254C3B0000BD4401 /* YahooFinanceHelperFunctions.swift in Sources */,
 				5E2B9DEA25312D68001DC30D /* Models.swift in Sources */,
 				5E7DA91F256DE04800345B87 /* EditView.swift in Sources */,
-				5E161A9725964A990006DD13 /* BarChart.swift in Sources */,
 				5E25B5E125190FDC00138E61 /* TextClassifier1.mlmodel in Sources */,
 				5E25B5D325190FD200138E61 /* Color+Extensions.swift in Sources */,
 				5E9FC5A125CB690200B3B978 /* Overview.swift in Sources */,

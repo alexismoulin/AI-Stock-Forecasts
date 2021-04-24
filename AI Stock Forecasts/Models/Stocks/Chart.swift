@@ -2,6 +2,7 @@ import Foundation
 
 struct Close: Codable {
     let close: [Double]
+    let volume: [Double]
 }
 
 struct QuoteInformations: Codable {

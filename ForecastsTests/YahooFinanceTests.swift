@@ -12,5 +12,8 @@ class YahooFinanceTests: XCTestCase {
         let stockValues = data.chart.result[0].indicators.quote[0].close
         XCTAssertEqual(stockValues.count, 23)
         XCTAssertGreaterThan(stockValues[14], 123)
+        let volumes = data.chart.result[0].indicators.quote[0].volume
+        XCTAssertEqual(volumes.count, 23)
+        XCTAssertGreaterThan(volumes[14], 1000000)
     }
 }

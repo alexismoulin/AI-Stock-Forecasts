@@ -63,6 +63,18 @@ struct StockHistoryText: View {
                     .opacity(0.5)
                     .frame(width: 1, height: 30, alignment: .center)
 
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Volume")
+                        .font(.caption)
+                        .foregroundColor(Color.black.opacity(0.5))
+                    Text(logs[selectedIndex].millionVolume)
+                        .font(Font.system(size: 20, weight: .medium, design: .default))
+                }
+
+                Color.gray
+                    .opacity(0.5)
+                    .frame(width: 1, height: 30, alignment: .center)
+
                 Spacer()
             }
 

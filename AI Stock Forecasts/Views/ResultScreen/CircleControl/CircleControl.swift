@@ -79,7 +79,6 @@ struct CircleControl: View {
         return Group {
             Circle().fill(Color.white)
             Circle().fill(Color.controlFill)
-                // incorrect error message with xcode12 - should work fine
                 .frame(width: diametr, height: diametr)
         }
     }
@@ -91,12 +90,10 @@ struct CircleControl: View {
         return Group {
             Circle()
                 .fill(Color.white)
-                // incorrect error message with xcode12 - should work fine
                 .frame(width: diametr, height: diametr)
 
             Circle()
                 .fill(Color.background)
-                // incorrect error message with xcode12 - should work fine
                 .frame(width: innerDiametr, height: innerDiametr)
         }
     }

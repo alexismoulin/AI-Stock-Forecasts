@@ -9,10 +9,6 @@ struct StockLog {
         self.date = date
     }
 
-    init(dataPoint: DataPoint) {
-        self.price = dataPoint.value
-        self.date = Date(timeIntervalSince1970: TimeInterval(dataPoint.day))
-    }
 }
 
 class StockData {
@@ -32,33 +28,18 @@ class StockData {
         StockLog(price: 4.76, date: Date(timeIntervalSince1970: 1603234715))
     ]
 
-    func formatTimeStamps(timeStampArray: [Double]) -> [Int] {
-        let calendar = Calendar.current
-        let dates: [Date] = timeStampArray.map {  Date(timeIntervalSince1970: $0) }
-        let days: [Int] = dates.map { calendar.component(.day, from: $0) }
-        return days
-    }
-
-    func createDataPointArray(stockPriceArray: [Double], daysArray: [Int]) -> [DataPoint] {
-        var dataPoints: [DataPoint] = []
-        let zipped: Zip2Sequence<[Double], [Int]> = zip(stockPriceArray, daysArray)
+    func parse(results: Chart) -> [StockLog] {
+        var stockLogs: [StockLog] = []
+        let stockPrices: [Double] = results.chart.result[0].indicators.quote[0].close
+        let timeStamps: [Int] = results.chart.result[0].timestamp
+        let zipped: Zip2Sequence<[Double], [Int]> = zip(stockPrices, timeStamps)
         for element in zipped {
-            dataPoints.append(DataPoint(value: element.0, day: element.1))
+            stockLogs.append(StockLog(price: element.0, date: Date(timeIntervalSince1970: TimeInterval(element.1))))
         }
-        return dataPoints
+        return stockLogs
     }
 
-    func parse(results: Chart) -> [DataPoint] {
-        let rawStockPrices: [Double] = results.chart.result[0].indicators.quote[0].close
-        let timeStamps: [Double] = results.chart.result[0].timestamp
-        // let roundedStockPrices: [Double] = roundStockPrices(stockPriceArray: stockPrices)
-        let dates: [Int] = formatTimeStamps(timeStampArray: timeStamps)
-
-        let dataPoints: [DataPoint] = createDataPointArray(stockPriceArray: rawStockPrices, daysArray: dates)
-        return dataPoints
-    }
-
-    func getHistoricalData(stockSymbol: String, completion: @escaping ([DataPoint]) -> Void) {
+    func getHistoricalData(stockSymbol: String, completion: @escaping ([StockLog]) -> Void) {
 
         let headers: [String: String] = [
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
@@ -72,7 +53,7 @@ class StockData {
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
-        var dataPoints: [DataPoint] = []
+        var stockLogs: [StockLog] = []
 
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest) { (data, _, error) -> Void in
@@ -81,14 +62,14 @@ class StockData {
                 if let safeData = data {
                     do {
                         let results = try decoder.decode(Chart.self, from: safeData)
-                        dataPoints = self.parse(results: results)
+                        stockLogs = self.parse(results: results)
                     } catch {
                         print("ERROR RapidAPI --->>> ", error.localizedDescription)
                     }
                 }
 
             }
-            completion(dataPoints)
+            completion(stockLogs)
         }
         dataTask.resume()
     }

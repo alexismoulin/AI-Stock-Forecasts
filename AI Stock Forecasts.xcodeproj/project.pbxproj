@@ -14,7 +14,6 @@
 		5E0BF892256C867300A5E2C9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BF891256C867300A5E2C9 /* DataController.swift */; };
 		5E0BF89D256CAEB300A5E2C9 /* CustomCompanyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BF89C256CAEB300A5E2C9 /* CustomCompanyList.swift */; };
 		5E1561032533BB3F009A0158 /* Arrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1561022533BB3F009A0158 /* Arrows.swift */; };
-		5E161A9425964A3B0006DD13 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E161A9325964A3B0006DD13 /* DataPoint.swift */; };
 		5E21C93A25BCEA51007DAA82 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21C93925BCEA51007DAA82 /* CustomPickerView.swift */; };
 		5E21C93D25BCEA65007DAA82 /* CustomPickerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21C93C25BCEA65007DAA82 /* CustomPickerTextView.swift */; };
 		5E25B5AE25190E3D00138E61 /* AI_Stock_ForecastsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5AD25190E3D00138E61 /* AI_Stock_ForecastsApp.swift */; };
@@ -26,7 +25,6 @@
 		5E25B5D225190FD200138E61 /* CircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5C825190FD200138E61 /* CircleControl.swift */; };
 		5E25B5D325190FD200138E61 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5C925190FD200138E61 /* Color+Extensions.swift */; };
 		5E25B5D425190FD200138E61 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5CA25190FD200138E61 /* ResultView.swift */; };
-		5E25B5D525190FD200138E61 /* StockChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5CC25190FD200138E61 /* StockChart.swift */; };
 		5E25B5D625190FD200138E61 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5CE25190FD200138E61 /* HomeView.swift */; };
 		5E25B5D725190FD200138E61 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5CF25190FD200138E61 /* Tile.swift */; };
 		5E25B5E025190FDC00138E61 /* TextClassifier2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5DB25190FDC00138E61 /* TextClassifier2.mlmodel */; };
@@ -44,8 +42,6 @@
 		5E4E20A92614195800D314C0 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E20A82614195800D314C0 /* Bundle-Decodable.swift */; };
 		5E5F6E22259691F20054CED6 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6E21259691F20054CED6 /* Chart.swift */; };
 		5E66CCDA2534C75E004E9274 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66CCD92534C75E004E9274 /* Networking.swift */; };
-		5E7120A9253E584800D4C698 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7120A8253E584800D4C698 /* Charts */; };
-		5E7120AC253E58FF00D4C698 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7120AB253E58FF00D4C698 /* Bar.swift */; };
 		5E7DA91F256DE04800345B87 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DA91E256DE04800345B87 /* EditView.swift */; };
 		5E84915A251AE1C3001AD6F0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E849159251AE1C3001AD6F0 /* News.swift */; };
 		5E874F8F261A2E0B0096DF5B /* NewsAPIMockup.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E874F8E261A2E0B0096DF5B /* NewsAPIMockup.json */; };
@@ -98,7 +94,6 @@
 		5E0BF891256C867300A5E2C9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5E0BF89C256CAEB300A5E2C9 /* CustomCompanyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCompanyList.swift; sourceTree = "<group>"; };
 		5E1561022533BB3F009A0158 /* Arrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrows.swift; sourceTree = "<group>"; };
-		5E161A9325964A3B0006DD13 /* DataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
 		5E21C93925BCEA51007DAA82 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E21C93C25BCEA65007DAA82 /* CustomPickerTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerTextView.swift; sourceTree = "<group>"; };
 		5E25B5AA25190E3D00138E61 /* AI Stock Forecasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Stock Forecasts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +107,6 @@
 		5E25B5C825190FD200138E61 /* CircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleControl.swift; sourceTree = "<group>"; };
 		5E25B5C925190FD200138E61 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		5E25B5CA25190FD200138E61 /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-		5E25B5CC25190FD200138E61 /* StockChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockChart.swift; sourceTree = "<group>"; };
 		5E25B5CE25190FD200138E61 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5E25B5CF25190FD200138E61 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		5E25B5DB25190FDC00138E61 /* TextClassifier2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TextClassifier2.mlmodel; sourceTree = "<group>"; };
@@ -128,7 +122,6 @@
 		5E4E20A82614195800D314C0 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		5E5F6E21259691F20054CED6 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		5E66CCD92534C75E004E9274 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		5E7120AB253E58FF00D4C698 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		5E7DA91E256DE04800345B87 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		5E849159251AE1C3001AD6F0 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		5E874F8E261A2E0B0096DF5B /* NewsAPIMockup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsAPIMockup.json; sourceTree = "<group>"; };
@@ -166,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E25B5E72519103A00138E61 /* Swifter in Frameworks */,
-				5E7120A9253E584800D4C698 /* Charts in Frameworks */,
 				5E3B37DC26291E6300714E46 /* VisualEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +255,6 @@
 			children = (
 				5E25B5CA25190FD200138E61 /* ResultView.swift */,
 				5E25B5C725190FD200138E61 /* CircleControl */,
-				5E25B5CB25190FD200138E61 /* StockChart */,
 				5EAD0298263498B600C03493 /* StockGraph */,
 			);
 			path = ResultScreen;
@@ -275,15 +266,6 @@
 				5E25B5C825190FD200138E61 /* CircleControl.swift */,
 			);
 			path = CircleControl;
-			sourceTree = "<group>";
-		};
-		5E25B5CB25190FD200138E61 /* StockChart */ = {
-			isa = PBXGroup;
-			children = (
-				5E25B5CC25190FD200138E61 /* StockChart.swift */,
-				5E7120AB253E58FF00D4C698 /* Bar.swift */,
-			);
-			path = StockChart;
 			sourceTree = "<group>";
 		};
 		5E25B5CD25190FD200138E61 /* HomeScreen */ = {
@@ -358,7 +340,6 @@
 		5E7120B1253E62AE00D4C698 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
-				5E161A9325964A3B0006DD13 /* DataPoint.swift */,
 				5EAD02932634978F00C03493 /* StockLog.swift */,
 				5E5F6E21259691F20054CED6 /* Chart.swift */,
 			);
@@ -496,7 +477,6 @@
 			name = "AI Stock Forecasts";
 			packageProductDependencies = (
 				5E25B5E62519103A00138E61 /* Swifter */,
-				5E7120A8253E584800D4C698 /* Charts */,
 				5E3B37DB26291E6300714E46 /* VisualEffects */,
 			);
 			productName = "AI Stock Forecasts";
@@ -572,7 +552,6 @@
 			mainGroup = 5E25B5A125190E3D00138E61;
 			packageReferences = (
 				5E25B5E52519103A00138E61 /* XCRemoteSwiftPackageReference "Swifter" */,
-				5E7120A7253E584700D4C698 /* XCRemoteSwiftPackageReference "Charts" */,
 				5E3B37DA26291E6300714E46 /* XCRemoteSwiftPackageReference "VisualEffects" */,
 			);
 			productRefGroup = 5E25B5AB25190E3D00138E61 /* Products */;
@@ -645,7 +624,6 @@
 			files = (
 				5E2B9DE62531102A001DC30D /* SectionTitle.swift in Sources */,
 				5E1561032533BB3F009A0158 /* Arrows.swift in Sources */,
-				5E25B5D525190FD200138E61 /* StockChart.swift in Sources */,
 				5E08FAB3252AAB9000DC586A /* TopBottomResultsView.swift in Sources */,
 				5E25B5BF25190FC000138E61 /* Secret.swift in Sources */,
 				5E25B5E325190FDC00138E61 /* CompaniesModel.swift in Sources */,
@@ -671,11 +649,9 @@
 				5E0BF88F256C824E00A5E2C9 /* CustomCompanies.xcdatamodeld in Sources */,
 				5EB4111726267B3A0088961E /* ContentView.swift in Sources */,
 				5EAD02942634978F00C03493 /* StockLog.swift in Sources */,
-				5E7120AC253E58FF00D4C698 /* Bar.swift in Sources */,
 				5E0BF892256C867300A5E2C9 /* DataController.swift in Sources */,
 				5E25B5D425190FD200138E61 /* ResultView.swift in Sources */,
 				5E25B5D125190FD200138E61 /* ButtonStyled.swift in Sources */,
-				5E161A9425964A3B0006DD13 /* DataPoint.swift in Sources */,
 				5E25B5D725190FD200138E61 /* Tile.swift in Sources */,
 				5E25B5D225190FD200138E61 /* CircleControl.swift in Sources */,
 				5EAD029C263498D600C03493 /* StockHistoryText.swift in Sources */,
@@ -1033,14 +1009,6 @@
 				minimumVersion = 1.0.3;
 			};
 		};
-		5E7120A7253E584700D4C698 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1053,11 +1021,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E3B37DA26291E6300714E46 /* XCRemoteSwiftPackageReference "VisualEffects" */;
 			productName = VisualEffects;
-		};
-		5E7120A8253E584800D4C698 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E7120A7253E584700D4C698 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 

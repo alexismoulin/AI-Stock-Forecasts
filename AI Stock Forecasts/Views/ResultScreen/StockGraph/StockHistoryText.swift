@@ -34,7 +34,7 @@ struct StockHistoryText: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("\(startDate) - \(endDate)".uppercased())
+            Text("Period: \(startDate) - \(endDate)".uppercased())
                 .font(Font.body.weight(.heavy))
 
             HStack(spacing: 12) {

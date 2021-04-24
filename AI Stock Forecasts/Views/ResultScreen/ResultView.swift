@@ -27,6 +27,15 @@ struct ResultView: View {
                         createCircleControl(radius: circleRadius)
                         createDescription()
                         Divider()
+                        HStack(alignment: .center, spacing: 0) {
+                            Text("Daily stock price for ")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text("\(company.id)")
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                                .font(.title2)
+                        }
                         if stockLogs.count < 12 {
                             ProgressView("loading data...")
                         } else {
@@ -42,7 +51,7 @@ struct ResultView: View {
         .onAppear {
             performHaptics()
             stockData.getHistoricalData(stockSymbol: company.id) { results in
-                stockLogs = results.map { StockLog(dataPoint: $0) }.suffix(12)
+                stockLogs = results.suffix(12)
                 print("----------- Printing stock logs -----------")
                 print(stockLogs)
                 print("------------- End of logs -----------------")

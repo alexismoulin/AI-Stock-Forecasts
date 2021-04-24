@@ -3,10 +3,10 @@ import SwiftUI
 struct DataPoint: Identifiable {
     let id = UUID()
     let value: Double
-    let title: Int
+    let day: Int
 
-    init(value: Double, title: Int = 0) {
+    init(value: Double, day: Int = 0) {
         self.value = value
-        self.title = title
+        self.day = day
     }
 }

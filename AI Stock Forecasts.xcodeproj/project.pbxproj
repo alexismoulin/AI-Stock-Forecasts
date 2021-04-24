@@ -71,7 +71,6 @@
 		5EB5FEB92611446C0041497F /* CompanyPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEB82611446C0041497F /* CompanyPlistTests.swift */; };
 		5ECA898A25929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */; };
 		5ED2E89B26192B5D003B7F0A /* TwitterCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2E89A26192B5D003B7F0A /* TwitterCallTests.swift */; };
-		5EF48E72254C3B0000BD4401 /* YahooFinanceHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF48E71254C3B0000BD4401 /* YahooFinanceHelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,7 +158,6 @@
 		5EB5FEB82611446C0041497F /* CompanyPlistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPlistTests.swift; sourceTree = "<group>"; };
 		5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCompany-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		5ED2E89A26192B5D003B7F0A /* TwitterCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCallTests.swift; sourceTree = "<group>"; };
-		5EF48E71254C3B0000BD4401 /* YahooFinanceHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooFinanceHelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +242,6 @@
 				5E8F0FD526101F6000A7CABF /* Edit */,
 				5E25B5C625190FD200138E61 /* ResultScreen */,
 				5E25B5C425190FD200138E61 /* SharedComponents */,
-				5EB51584262BBBBA00500872 /* DebugView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,6 +348,7 @@
 		5E70E241259150EF00C96875 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EB51584262BBBBA00500872 /* DebugView.swift */,
 				5E25B5B125190E3F00138E61 /* Assets.xcassets */,
 				5E25B5F225191BE800138E61 /* LaunchScreen.storyboard */,
 			);
@@ -360,7 +358,6 @@
 		5E7120B1253E62AE00D4C698 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
-				5EF48E71254C3B0000BD4401 /* YahooFinanceHelperFunctions.swift */,
 				5E161A9325964A3B0006DD13 /* DataPoint.swift */,
 				5EAD02932634978F00C03493 /* StockLog.swift */,
 				5E5F6E21259691F20054CED6 /* Chart.swift */,
@@ -446,9 +443,9 @@
 		5EAD0298263498B600C03493 /* StockGraph */ = {
 			isa = PBXGroup;
 			children = (
+				5EAD029A263498D600C03493 /* StockHistoryView.swift */,
 				5EAD029B263498D600C03493 /* StockGraph.swift */,
 				5EAD0299263498D600C03493 /* StockHistoryText.swift */,
-				5EAD029A263498D600C03493 /* StockHistoryView.swift */,
 			);
 			path = StockGraph;
 			sourceTree = "<group>";
@@ -666,7 +663,6 @@
 				5E25B5D025190FD200138E61 /* SelectionView.swift in Sources */,
 				5E0BF89D256CAEB300A5E2C9 /* CustomCompanyList.swift in Sources */,
 				5EB4111226267A100088961E /* SideBarNavigationView.swift in Sources */,
-				5EF48E72254C3B0000BD4401 /* YahooFinanceHelperFunctions.swift in Sources */,
 				5E2B9DEA25312D68001DC30D /* Models.swift in Sources */,
 				5E7DA91F256DE04800345B87 /* EditView.swift in Sources */,
 				5E25B5E125190FDC00138E61 /* TextClassifier1.mlmodel in Sources */,

@@ -3,10 +3,13 @@ import CoreHaptics
 
 struct ResultView: View {
 
+    // MARK: - Properties
+
+    let stockData = StockData()
+    var company: Company
     @State var selectedSegment: Segment?
     @State private var engine = try? CHHapticEngine()
-
-    var company: Company
+    @State var stockLogs: [StockLog] = []
 
     // MARK: - Screen Body
 
@@ -24,7 +27,11 @@ struct ResultView: View {
                         createCircleControl(radius: circleRadius)
                         createDescription()
                         Divider()
-                        StockChart(stockSymbol: company.id)
+                        if stockLogs.count < 12 {
+                            ProgressView("loading data...")
+                        } else {
+                            StockHistoryView(data: stockLogs)
+                        }
                     }
                 }
             }
@@ -32,7 +39,15 @@ struct ResultView: View {
         .colorScheme(.light)
         .navigationTitle(company.name)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear(perform: performHaptics)
+        .onAppear {
+            performHaptics()
+            stockData.getHistoricalData(stockSymbol: company.id) { results in
+                stockLogs = results.map { StockLog(dataPoint: $0) }.suffix(12)
+                print("----------- Printing stock logs -----------")
+                print(stockLogs)
+                print("------------- End of logs -----------------")
+            }
+        }
     }
 
     // MARK: - Components

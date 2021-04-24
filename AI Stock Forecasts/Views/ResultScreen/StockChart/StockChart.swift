@@ -3,9 +3,14 @@ import Charts
 
 struct StockChart: View {
 
-    var stockSymbol: String
+    // MARK: - Properties
 
+    var stockSymbol: String
+    let stockData = StockData()
     @State var stockPrices: [Double] = []
+    @State var stockLogs: [StockLog] = []
+
+    // MARK: - Component functions
 
     func createBarChart(stocks: [Double]) -> some View {
         var stockEntries = [BarChartDataEntry]()
@@ -14,6 +19,12 @@ struct StockChart: View {
         }
         return Bar(entries: stockEntries)
     }
+
+    func createStockGraph(stockLogs: [StockLog]) -> some View {
+        StockHistoryView(data: stockLogs)
+    }
+
+    // MARK: - body
 
     var body: some View {
         return VStack {
@@ -39,13 +50,18 @@ struct StockChart: View {
                         .fontWeight(.bold)
                 }
             }
-            if stockPrices.isEmpty {
+            if stockLogs.count < 12 {
                 ProgressView("loading data...")
             } else {
                 createBarChart(stocks: stockPrices).frame(height: 200)
+                createStockGraph(stockLogs: stockLogs)
             }
-        }.onAppear { getHistoricalData(stockSymbol: stockSymbol) { results in
+        }.onAppear { stockData.getHistoricalData(stockSymbol: stockSymbol) { results in
             stockPrices = results.map { $0.value }
+            stockLogs = results.map { StockLog(dataPoint: $0) }.suffix(12)
+            print("----------- Printing stock logs -----------")
+            print(stockLogs)
+            print("------------- End of logs -----------------")
         }
 
         }

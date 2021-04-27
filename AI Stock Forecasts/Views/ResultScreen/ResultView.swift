@@ -45,7 +45,7 @@ struct ResultView: View {
                 }
             }
         }
-        .colorScheme(.light)
+        // .colorScheme(.light)
         .navigationTitle(company.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {

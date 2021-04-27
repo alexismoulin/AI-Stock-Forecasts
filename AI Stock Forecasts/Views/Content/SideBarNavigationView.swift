@@ -13,7 +13,7 @@ struct SideBarNavigationView: View {
                     Label("Sector", systemImage: "globe")
                 }.tag("0")
                 NavigationLink(destination: SelectionView(sector: sector, fetchRequest: fetchRequest)) {
-                    Label("Single", systemImage: "target")
+                    Label("Search", systemImage: "magnifyingglass")
                 }.tag("1")
                 NavigationLink(destination: TopBottomView(sector: sector, fetchRequest: fetchRequest)) {
                     Label("Top Bottom 5", systemImage: "arrow.up.arrow.down")

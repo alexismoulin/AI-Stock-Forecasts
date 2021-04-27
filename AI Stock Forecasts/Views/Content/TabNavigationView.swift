@@ -18,7 +18,7 @@ struct TabNavigationView: View {
                 SelectionView(sector: sector, fetchRequest: fetchRequest)
                     .tag(1)
                     .tabItem {
-                        Image(systemName: "target")
+                        Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
                 TopBottomView(sector: sector, fetchRequest: fetchRequest)
@@ -42,7 +42,7 @@ struct TabNavigationView: View {
                     }
                 */
             }
-            .colorScheme(.light)
+            // .colorScheme(.light)
             .navigationTitle(selectedTab == 3 ? "Your custom companies" : "\(sector.capitalized)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

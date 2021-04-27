@@ -93,9 +93,9 @@ struct SelectionView: View {
 
     private func createButtons() -> some View {
         // ButtonStyled is a custom component which can be found in the Components folder
-        let predictButton = ButtonStyled(text: "forecast", color: Color.black)
+        let predictButton = ButtonStyled(text: "forecast", color: .buttonColor)
         let buttonBeforePredict = ButtonStyled(text: "not ready", color: Color.gray.opacity(0.5))
-        let buttonAfterPredict = ButtonStyled(text: "results", color: Color.blue)
+        let buttonAfterPredict = ButtonStyled(text: "results", color: .blue)
 
         return HStack(spacing: sizeClass == .compact ? 16 : 50) {
             Button {

@@ -18,6 +18,6 @@ struct CustomPickerTextView: View {
                 } label: {
                     Rectangle().foregroundColor((Color.clear))
                 }
-            )
+            )// .colorScheme(.light)
     }
 }

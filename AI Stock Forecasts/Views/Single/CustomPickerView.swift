@@ -82,6 +82,7 @@ struct CustomPickerView: View {
                         }
                     }
                 }
+                .colorScheme(.light)
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(10)
                 .frame(maxWidth: sizeClass == .compact ? 400 : 800)

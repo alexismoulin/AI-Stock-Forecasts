@@ -28,7 +28,9 @@ struct Overview: View {
                 Text("Symbol: \(company.id)")
                     .font(.subheadline)
             }.padding(5)
-        }.frame(maxWidth: .infinity, maxHeight: 120).background(Color(UIColor.lightGray))
+        }
+        .colorScheme(.light)
+        .frame(maxWidth: 800, maxHeight: 120).background(Color(UIColor.lightGray))
         .cornerRadius(10)
         .padding(.horizontal, 5)
         .shadow(radius: 3)

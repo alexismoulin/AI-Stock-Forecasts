@@ -29,7 +29,7 @@ struct TopBottomResultsView: View {
                 }
             }
         }
-        .colorScheme(.light)
+        // .colorScheme(.light)
         .navigationTitle("\(sector.capitalized)")
         .navigationBarTitleDisplayMode(.inline)
     }

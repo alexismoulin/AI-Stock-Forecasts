@@ -11,6 +11,6 @@ struct ButtonStyled: View {
             .foregroundColor(Color.white)
             .frame(width: 120, height: 50)
             .background(color)
-            .cornerRadius(12.0)
+            .cornerRadius(16.0)
     }
 }

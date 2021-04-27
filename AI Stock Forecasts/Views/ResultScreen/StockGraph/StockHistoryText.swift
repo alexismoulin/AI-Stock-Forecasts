@@ -4,9 +4,11 @@ struct StockHistoryText: View {
 
     // MARK: - Properties
 
+    @Binding var selectedIndex: Int
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
     var logs: [StockLog]
     var curr: Date
-    @Binding var selectedIndex: Int
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -30,6 +32,24 @@ struct StockHistoryText: View {
         self.logs = logs.sorted { $0.date < $1.date }
     }
 
+    // MARK: - Component functions
+
+    func createStockInfo(title: String, information: String) -> some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.caption)
+                    .foregroundColor(colorScheme == .light ? .black.opacity(0.5) : .gray)
+                Text(information)
+                    .font(Font.system(size: 20, weight: .medium, design: .default))
+            }
+
+            Color.gray
+                .opacity(colorScheme == .light ? 0.5 : 0.8)
+                .frame(width: 1, height: 30, alignment: .center)
+        }
+    }
+
     // MARK: - body
 
     var body: some View {
@@ -38,50 +58,16 @@ struct StockHistoryText: View {
                 .font(Font.body.weight(.heavy))
 
             HStack(spacing: 12) {
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Date")
-                        .font(.caption)
-                        .foregroundColor(Color.black.opacity(0.5))
-                    Text(dateFormatter.string(from: logs[selectedIndex].date))
-                        .font(Font.system(size: 20, weight: .medium, design: .default))
-                }
-
-                Color.gray
-                    .opacity(0.5)
-                    .frame(width: 1, height: 30, alignment: .center)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Stock Price")
-                        .font(.caption)
-                        .foregroundColor(Color.black.opacity(0.5))
-                    Text(String(format: "%.2f $", logs[selectedIndex].price))
-                        .font(Font.system(size: 20, weight: .medium, design: .default))
-                }
-
-                Color.gray
-                    .opacity(0.5)
-                    .frame(width: 1, height: 30, alignment: .center)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Volume")
-                        .font(.caption)
-                        .foregroundColor(Color.black.opacity(0.5))
-                    Text(logs[selectedIndex].millionVolume)
-                        .font(Font.system(size: 20, weight: .medium, design: .default))
-                }
-
-                Color.gray
-                    .opacity(0.5)
-                    .frame(width: 1, height: 30, alignment: .center)
-
+                createStockInfo(title: "Date", information: dateFormatter.string(from: logs[selectedIndex].date))
+                createStockInfo(title: "Stock Price", information: String(format: "%.2f $", logs[selectedIndex].price))
+                createStockInfo(title: "Volume", information: logs[selectedIndex].millionVolume)
                 Spacer()
             }
 
             VStack(alignment: .leading, spacing: 5) {
                 Text("LAST \(logs.count) WORKING DAYS")
                     .font(Font.caption.weight(.heavy))
-                    .foregroundColor(Color.black.opacity(0.7))
+                    .foregroundColor(colorScheme == .light ? .black.opacity(0.7) : .gray)
             }.padding(.top, 10)
         }
     }

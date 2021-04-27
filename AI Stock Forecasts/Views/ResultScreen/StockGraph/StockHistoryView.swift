@@ -36,6 +36,10 @@ struct StockHistoryView: View {
 
 struct StockHistoryViewPreview: PreviewProvider {
     static var previews: some View {
-        StockHistoryView(data: StockData.testData)
+        Group {
+            StockHistoryView(data: StockData.testData)
+            StockHistoryView(data: StockData.testData)
+                .colorScheme(.dark)
+        }
     }
 }

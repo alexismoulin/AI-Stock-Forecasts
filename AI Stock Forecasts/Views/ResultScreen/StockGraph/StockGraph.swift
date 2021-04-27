@@ -6,6 +6,8 @@ struct StockGraph: View {
 
     let logs: [StockLog]
     let curr: Date
+
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Binding var selectedIndex: Int
     @State private var lineOffset: CGFloat = 8 // Vertical line offset
     @State private var selectedXPos: CGFloat = 8 // User X touch location
@@ -31,8 +33,8 @@ struct StockGraph: View {
 
     // MARK: - body
     var body: some View {
-        drawGrid(height: 150)
-            .opacity(0.2)
+        drawGrid(height: 150, color: .buttonColor)
+            .opacity(colorScheme == .light ? 0.2 : 0.8)
             .overlay(drawActivityGradient(logs: logs))
             .overlay(drawActivityLine(logs: logs))
             .overlay(drawLogPoints(logs: logs))
@@ -41,28 +43,28 @@ struct StockGraph: View {
 
     // MARK: - Component functions
 
-    func drawGrid(height: CGFloat) -> some View {
+    func drawGrid(height: CGFloat, color: Color) -> some View {
         VStack(spacing: 0) {
-            Color.black.frame(height: 1, alignment: .center)
+            color.frame(height: 1, alignment: .center)
             HStack(spacing: 0) {
                 Color.clear
                     .frame(width: 8, height: height)
                 ForEach(0..<11) { _ in
-                    Color.black.frame(width: 1, height: height, alignment: .center)
+                    color.frame(width: 1, height: height, alignment: .center)
                     Spacer()
 
                 }
-                Color.black.frame(width: 1, height: height, alignment: .center)
+                color.frame(width: 1, height: height, alignment: .center)
                 Color.clear
                     .frame(width: 8, height: height)
             }
-            Color.black.frame(height: 1, alignment: .center)
+            color.frame(height: 1, alignment: .center)
         }
     }
 
     func drawActivityGradient(logs: [StockLog]) -> some View {
         LinearGradient(
-            gradient: Gradient(colors: [color, .white]),
+            gradient: Gradient(colors: [color, .background]),
             startPoint: .top,
             endPoint: .bottom
         )

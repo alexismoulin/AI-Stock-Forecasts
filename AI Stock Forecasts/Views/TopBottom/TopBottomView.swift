@@ -35,7 +35,7 @@ struct TopBottomView: View {
         }
     }
 
-// MARK: - body
+    // MARK: - body
 
     var body: some View {
         ZStack {
@@ -51,7 +51,6 @@ struct TopBottomView: View {
                 Spacer()
                 Arrows(type: arrowType)
                 Spacer()
-                Divider()
                 createButtons().padding(.top, 5)
                 ProgressView(value: progression, total: 1.0).padding(5)
             }
@@ -60,6 +59,10 @@ struct TopBottomView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             addCompanyToolbarItem
+        }
+        .onAppear {
+            ready = false
+            progression = 0
         }
     }
 
@@ -78,14 +81,8 @@ struct TopBottomView: View {
     }
 
     private func createButtons() -> some View {
-        // ButtonStyled is a custom component which can be found in the SharedComponents folder
-        let predictButton = ButtonStyled(text: "forecast", color: Color.black)
-        let buttonBeforePredict = ButtonStyled(text: "not ready", color: Color.gray.opacity(0.5))
-        let buttonAfterPredict = ButtonStyled(text: "results", color: Color.blue)
-
-        return HStack(spacing: sizeClass == .compact ? 16 : 50) {
-
-            Button {
+        if !ready {
+            return AnyView(Button {
                 for company in allCompanies {
                     network.fetchTweets1(company: company.arobase) { arobaseScore in
                         network.fetchTweets2(company: company.hash) { hashScore in
@@ -100,21 +97,16 @@ struct TopBottomView: View {
                     }
                 }
             } label: {
-                predictButton
-            }
-
-            NavigationLink(destination: TopBottomResultsView(
+                ButtonStyled(text: "forecast", color: .buttonColor)
+            })
+        } else {
+            return AnyView(NavigationLink(destination: TopBottomResultsView(
                 sector: sector,
                 companyArray: allCompanies,
                 type: arrowType
             )) {
-                ready ? buttonAfterPredict : buttonBeforePredict
-            }
-            .disabled(!ready)
-            .simultaneousGesture(TapGesture().onEnded({
-                self.ready = false
-                self.progression = 0.0
-            }))
+                ButtonStyled(text: "results", color: Color.blue)
+            })
         }
     }
 }

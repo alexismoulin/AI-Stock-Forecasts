@@ -5,12 +5,6 @@ struct CustomPickerView: View {
     // MARK: - Properties
 
     var items: [Company]
-    let layout: [GridItem] = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
 
     @State private var filteredItems: [Company] = []
     @State private var filterString: String = ""
@@ -82,7 +76,7 @@ struct CustomPickerView: View {
                         }
                     }
                 }
-                .colorScheme(.light)
+                // .colorScheme(.light)
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(10)
                 .frame(maxWidth: sizeClass == .compact ? 400 : 800)

@@ -57,7 +57,6 @@ struct SelectionView: View {
                 .padding()
                 Overview(company: selectedCompany)
                 Spacer()
-                Divider()
                 createButtons().padding(.top, 5)
                 ProgressView(value: progression, total: 1.0).padding(5)
             }
@@ -74,6 +73,10 @@ struct SelectionView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             addCompanyToolbarItem
+        }
+        .onAppear {
+            ready = false
+            progression = 0
         }
     }
 
@@ -92,13 +95,8 @@ struct SelectionView: View {
     }
 
     private func createButtons() -> some View {
-        // ButtonStyled is a custom component which can be found in the Components folder
-        let predictButton = ButtonStyled(text: "forecast", color: .buttonColor)
-        let buttonBeforePredict = ButtonStyled(text: "not ready", color: Color.gray.opacity(0.5))
-        let buttonAfterPredict = ButtonStyled(text: "results", color: .blue)
-
-        return HStack(spacing: sizeClass == .compact ? 16 : 50) {
-            Button {
+        if !ready {
+            return AnyView(Button {
                 network.fetchTweets1(company: selectedCompany.arobase) { arobaseScore in
                     progression = 0.3
                     network.fetchTweets2(company: selectedCompany.hash) { hashScore in
@@ -113,16 +111,13 @@ struct SelectionView: View {
                     }
                 }
             } label: {
-                predictButton
-            }
-            NavigationLink(destination: ResultView(company: selectedCompany)) {
-                ready ? buttonAfterPredict : buttonBeforePredict
-            }
-            .disabled(!ready)
-            .simultaneousGesture(TapGesture().onEnded({
-                ready = false
-                progression = 0.0
-            }))
+                ButtonStyled(text: "forecast", color: .buttonColor)
+            })
+        } else {
+            return AnyView(NavigationLink(destination: ResultView(company: selectedCompany)) {
+                ButtonStyled(text: "results", color: .blue)
+            })
         }
+
     }
 }

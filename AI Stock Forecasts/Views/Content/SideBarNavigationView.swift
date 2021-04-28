@@ -27,7 +27,6 @@ struct SideBarNavigationView: View {
                 }.tag("3")
                 */
             }
-            .colorScheme(.light)
             .navigationTitle("\(sector.capitalized)")
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(SidebarListStyle())

@@ -10,12 +10,12 @@ struct CustomPickerView: View {
     @State private var filterString: String = ""
     @State private var frameHeight: CGFloat = 400
 
-    // MARK: Bindings
     @Binding var pickerField: String
     @Binding var presentPicker: Bool
     @Binding var selectedCompanyId: String
 
     @Environment(\.horizontalSizeClass) var sizeClass
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
 
     // MARK: - Body
     var body: some View {
@@ -76,8 +76,8 @@ struct CustomPickerView: View {
                         }
                     }
                 }
-                // .colorScheme(.light)
-                .background(Color(UIColor.secondarySystemBackground))
+                .colorScheme(.light)
+                .background(Color.secondaryPickerColor)
                 .cornerRadius(10)
                 .frame(maxWidth: sizeClass == .compact ? 400 : 800)
                 .padding(.horizontal, 10)
@@ -93,7 +93,8 @@ struct CustomPickerView: View {
         }
     }
 
-    // MARK: Helper Functions
+    // MARK: - Helper functions
+
     fileprivate func setHeight() {
         withAnimation {
             if filteredItems.count > 5 {

@@ -77,7 +77,7 @@ struct CircleControl: View {
         let diametr: CGFloat = radius * 2.0 - 4.0
 
         return Group {
-            Circle().fill(Color.white)
+            Circle().fill(Color.pickerColor)
             Circle().fill(Color.controlFill)
                 .frame(width: diametr, height: diametr)
         }
@@ -89,7 +89,7 @@ struct CircleControl: View {
 
         return Group {
             Circle()
-                .fill(Color.white)
+                .fill(Color.pickerColor)
                 .frame(width: diametr, height: diametr)
 
             Circle()
@@ -139,7 +139,7 @@ struct CircleControl: View {
                     endAngle: .radians(.pi / 2.0),
                     clockwise: false)
                 path = path.strokedPath(.init(lineWidth: 2.0))
-            }.foregroundColor(.white)
+            }.foregroundColor(.pickerColor)
         }
     }
 
@@ -207,7 +207,7 @@ struct CircleControl: View {
         return Group {
             Path { path in
                 path.addEllipse(in: borderRect)
-            }.foregroundColor(.white)
+            }.foregroundColor(.pickerColor)
 
             Path { path in
                 path.addEllipse(in: rect)

@@ -42,7 +42,6 @@ struct TabNavigationView: View {
                     }
                 */
             }
-            // .colorScheme(.light)
             .navigationTitle(selectedTab == 3 ? "Your custom companies" : "\(sector.capitalized)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

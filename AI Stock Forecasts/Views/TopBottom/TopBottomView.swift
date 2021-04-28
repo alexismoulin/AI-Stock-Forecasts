@@ -11,7 +11,7 @@ struct TopBottomView: View {
     var allCompanies: [Company]
 
     @State private var ready: Bool = false
-    @State private var progression: Double = 0.0
+    @State private var progression: Double = 0
     @State private var arrowType: ArrowType = .up
 
     @Environment(\.horizontalSizeClass) var sizeClass

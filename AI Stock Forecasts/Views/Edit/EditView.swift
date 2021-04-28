@@ -84,7 +84,6 @@ struct EditView: View {
                     }.foregroundColor(.red)
             }
         }
-        // .colorScheme(.light)
         .navigationTitle(company?.wrappedName ?? "New Company")
         .alert(isPresented: $showingAlert) { () -> Alert in
             Alert(

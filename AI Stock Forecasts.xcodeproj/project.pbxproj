@@ -231,7 +231,7 @@
 			children = (
 				5EB411212626837C0088961E /* Content */,
 				5E25B5CD25190FD200138E61 /* HomeScreen */,
-				5E8F0FD326101F2700A7CABF /* Single */,
+				5E8F0FD326101F2700A7CABF /* Search */,
 				5E8F0FD126101EC300A7CABF /* TopBottom */,
 				5E8F0FD526101F6000A7CABF /* Edit */,
 				5E25B5C625190FD200138E61 /* ResultScreen */,
@@ -405,14 +405,14 @@
 			path = TopBottom;
 			sourceTree = "<group>";
 		};
-		5E8F0FD326101F2700A7CABF /* Single */ = {
+		5E8F0FD326101F2700A7CABF /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				5E25B5C325190FD200138E61 /* SelectionView.swift */,
 				5E21C93925BCEA51007DAA82 /* CustomPickerView.swift */,
 				5E21C93C25BCEA65007DAA82 /* CustomPickerTextView.swift */,
 			);
-			path = Single;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		5E8F0FD526101F6000A7CABF /* Edit */ = {

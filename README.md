@@ -21,7 +21,7 @@
 
 ## General information about this app
 
-This iOS app predicts Fortune 100 companies stock price evolution through sentiment analysis. It uses **SwiftUI** for the layout, **CoreML** for the models creation, **Twitter** and **News-api** as the sources for data analysis.
+This iOS / iPad app predicts Fortune 100 companies stock price evolution through sentiment analysis. It uses **SwiftUI** for the layout, **CoreML** for the models creation, **Twitter** and **News-api** as the sources for data analysis.
 
 The latest versions (1.4 and up) use **Core Data** to let you add, manage and save your own companies as well as cryptocurrencies.
 
@@ -54,6 +54,9 @@ I used the custom picker from Stewart Lynch: https://www.youtube.com/watch?v=ATg
 ### On the ResultScreen:
 I used the Circle Control code from this project:
 https://medium.com/swlh/replicating-the-apple-card-application-using-swiftui-f472f3947683
+
+I used the StockGraph from this project:
+https://trailingclosure.com/recreating-the-strava-activity-graph/
 
 ## Landing Page & Privacy Policy
 

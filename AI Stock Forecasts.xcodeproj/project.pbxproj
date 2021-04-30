@@ -32,7 +32,6 @@
 		5E25B5E325190FDC00138E61 /* CompaniesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5DF25190FDC00138E61 /* CompaniesModel.swift */; };
 		5E25B5E72519103A00138E61 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 5E25B5E62519103A00138E61 /* Swifter */; };
 		5E25B5EE2519125B00138E61 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25B5ED2519125B00138E61 /* PlaceholderView.swift */; };
-		5E25B5F325191BE800138E61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E25B5F225191BE800138E61 /* LaunchScreen.storyboard */; };
 		5E2B9DE62531102A001DC30D /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B9DE52531102A001DC30D /* SectionTitle.swift */; };
 		5E2B9DEA25312D68001DC30D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B9DE925312D68001DC30D /* Models.swift */; };
 		5E3B37DC26291E6300714E46 /* VisualEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5E3B37DB26291E6300714E46 /* VisualEffects */; };
@@ -114,7 +113,6 @@
 		5E25B5DC25190FDC00138E61 /* TextClassifier1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TextClassifier1.mlmodel; sourceTree = "<group>"; };
 		5E25B5DF25190FDC00138E61 /* CompaniesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesModel.swift; sourceTree = "<group>"; };
 		5E25B5ED2519125B00138E61 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
-		5E25B5F225191BE800138E61 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E2B9DE52531102A001DC30D /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		5E2B9DE925312D68001DC30D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5E4E20892612BBE200D314C0 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			children = (
 				5E25B5AD25190E3D00138E61 /* AI_Stock_ForecastsApp.swift */,
 				5E25B5BE25190FC000138E61 /* Secret.swift */,
-				5E25B5B625190E3F00138E61 /* Info.plist */,
 				5E25B5D925190FDC00138E61 /* Models */,
 				5E25B5C125190FD200138E61 /* Views */,
 				5E740C722593E60400DD7E6A /* Controller */,
@@ -332,9 +329,9 @@
 		5E70E241259150EF00C96875 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E25B5B625190E3F00138E61 /* Info.plist */,
 				5EB51584262BBBBA00500872 /* DebugView.swift */,
 				5E25B5B125190E3F00138E61 /* Assets.xcassets */,
-				5E25B5F225191BE800138E61 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -575,7 +572,6 @@
 			files = (
 				5E9158A6256F39DB00AD9F8B /* companies.plist in Resources */,
 				5E25B5B525190E3F00138E61 /* Preview Assets.xcassets in Resources */,
-				5E25B5F325191BE800138E61 /* LaunchScreen.storyboard in Resources */,
 				5E25B5B225190E3F00138E61 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,17 +827,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"AI Stock Forecasts/Preview Content\"";
 				DEVELOPMENT_TEAM = R28KNM82KD;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "AI Stock Forecasts/Info.plist";
+				INFOPLIST_FILE = "AI Stock Forecasts/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex.AI-Stock-Forecasts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -855,17 +851,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"AI Stock Forecasts/Preview Content\"";
 				DEVELOPMENT_TEAM = R28KNM82KD;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "AI Stock Forecasts/Info.plist";
+				INFOPLIST_FILE = "AI Stock Forecasts/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alex.AI-Stock-Forecasts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

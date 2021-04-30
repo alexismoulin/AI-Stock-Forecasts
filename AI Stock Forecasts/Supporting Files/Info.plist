@@ -28,11 +28,14 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchScreen</key>
-	<dict/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>LaunchScreen</string>
+	<dict>
+		<key>UIImageName</key>
+		<string>launchscreenLogo</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<false/>
+		<key>UIColorName</key>
+		<string>launchscreenColor</string>
+	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

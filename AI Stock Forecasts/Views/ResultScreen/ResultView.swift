@@ -108,7 +108,7 @@ struct ResultView: View {
                 description: "The company and the stock have very positive feedbacks - The value of the stock is likely to increase slightly in the near future") // swiftlint:disable:this line_length
         ]
 
-        let circleControl = CircleControl(segments: segments, selectedSegment: $selectedSegment, company: company)
+        let circleControl = CircleControl(segments: segments, company: company, selectedSegment: $selectedSegment)
 
         return circleControl
             .frame(width: radius, height: radius)

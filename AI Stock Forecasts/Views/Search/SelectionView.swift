@@ -17,7 +17,7 @@ struct SelectionView: View {
     @State private var ready: Bool = false
     @State private var progression: Double = 0.0
     @State private var presentPicker: Bool = false
-    @State private var fieldString: String = ""
+    @State private var fieldString: String
     @State private var tag: Int = 1
 
     // MARK: - Custom init
@@ -39,6 +39,7 @@ struct SelectionView: View {
         allCompanies.sort {
             $0.name < $1.name
         }
+        _fieldString = State(wrappedValue: allCompanies[0].name)
     }
 
     // MARK: - Screen body
@@ -77,6 +78,7 @@ struct SelectionView: View {
         .onAppear {
             ready = false
             progression = 0
+            fieldString = allCompanies[0].name
         }
     }
 

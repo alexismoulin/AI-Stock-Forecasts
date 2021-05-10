@@ -67,6 +67,8 @@
 		5EB5FEB92611446C0041497F /* CompanyPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEB82611446C0041497F /* CompanyPlistTests.swift */; };
 		5ECA898A25929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */; };
 		5ED2E89B26192B5D003B7F0A /* TwitterCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2E89A26192B5D003B7F0A /* TwitterCallTests.swift */; };
+		5ED71B872649DA7600D7A9FE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED71B862649DA7600D7A9FE /* DetailView.swift */; };
+		5ED71B892649E67100D7A9FE /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED71B882649E67100D7A9FE /* DetailButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +153,8 @@
 		5EB5FEB82611446C0041497F /* CompanyPlistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPlistTests.swift; sourceTree = "<group>"; };
 		5ECA898925929BE300F477C4 /* CustomCompany-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCompany-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		5ED2E89A26192B5D003B7F0A /* TwitterCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCallTests.swift; sourceTree = "<group>"; };
+		5ED71B862649DA7600D7A9FE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5ED71B882649E67100D7A9FE /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +248,6 @@
 				5E25B5C525190FD200138E61 /* ButtonStyled.swift */,
 				5E2B9DE52531102A001DC30D /* SectionTitle.swift */,
 				5EB5157C262B6F5600500872 /* ToolbarItems.swift */,
-				5E9FC5A025CB690200B3B978 /* Overview.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				5E25B5CA25190FD200138E61 /* ResultView.swift */,
+				5ED71B862649DA7600D7A9FE /* DetailView.swift */,
 				5E25B5C725190FD200138E61 /* CircleControl */,
 				5EAD0298263498B600C03493 /* StockGraph */,
 			);
@@ -263,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				5E25B5C825190FD200138E61 /* CircleControl.swift */,
+				5ED71B882649E67100D7A9FE /* DetailButton.swift */,
 			);
 			path = CircleControl;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				5E25B5C325190FD200138E61 /* SelectionView.swift */,
+				5E9FC5A025CB690200B3B978 /* Overview.swift */,
 				5E21C93925BCEA51007DAA82 /* CustomPickerView.swift */,
 				5E21C93C25BCEA65007DAA82 /* CustomPickerTextView.swift */,
 			);
@@ -626,6 +632,7 @@
 				5E08FAB3252AAB9000DC586A /* TopBottomResultsView.swift in Sources */,
 				5E25B5BF25190FC000138E61 /* Secret.swift in Sources */,
 				5E25B5E325190FDC00138E61 /* CompaniesModel.swift in Sources */,
+				5ED71B872649DA7600D7A9FE /* DetailView.swift in Sources */,
 				5EB411262626874A0088961E /* Sector.swift in Sources */,
 				5EB51585262BBBBA00500872 /* DebugView.swift in Sources */,
 				5E84915A251AE1C3001AD6F0 /* News.swift in Sources */,
@@ -633,6 +640,7 @@
 				5E9BC4B0251E686000329625 /* TabNavigationView.swift in Sources */,
 				5E25B5EE2519125B00138E61 /* PlaceholderView.swift in Sources */,
 				5E21C93D25BCEA65007DAA82 /* CustomPickerTextView.swift in Sources */,
+				5ED71B892649E67100D7A9FE /* DetailButton.swift in Sources */,
 				5E25B5D625190FD200138E61 /* HomeView.swift in Sources */,
 				5E08FAA9252A7E2C00DC586A /* TopBottomView.swift in Sources */,
 				5EA69AB2262B1BB900DE4A3C /* BackgroundEffect.swift in Sources */,

@@ -2,6 +2,14 @@ import Foundation
 
 struct CompaniesModel {
 
+    static let example = Company(
+        id: "BBY",
+        name: "Best Buy Co., Inc.",
+        arobase: "@BestBuy",
+        sector: "goods",
+        custom: false
+    )
+
     static func readPropertyList() -> [[String: String]]? {
         guard let path = Bundle.main.path(forResource: "companies", ofType: "plist") else {
             return nil

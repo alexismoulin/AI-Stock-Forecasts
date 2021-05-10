@@ -2,20 +2,21 @@ import SwiftUI
 
 struct CircleControl: View {
 
+    // MARK: - Properties
+
+    let totalBalance: Double = 200
+    let lineWidth: CGFloat = 44.0
     let segments: [Segment]
-    @Binding var selectedSegment: Segment?
     let company: Company
 
     @State private var showDetails: Bool = false
+    @Binding var selectedSegment: Segment?
 
     var shiftedScore: Double {
         return company.totalScore + 100 // from 0 to 200
     }
 
-    let totalBalance: Double = 200
-    let lineWidth: CGFloat = 44.0
-
-    // MARK: - Screen body
+    // MARK: - body
 
     var body: some View {
         GeometryReader { geometry in
@@ -23,37 +24,7 @@ struct CircleControl: View {
         }
         .onAppear { selectedSegment = currentSegment() }
         .sheet(isPresented: $showDetails) {
-            VStack {
-                Overview(company: company).padding(.top)
-            Form {
-                Section(header: Text("Subscores - Source: Twitter"), footer: Text("weight: 60%")) {
-                    HStack {
-                        Text("Score for ") + Text("\(company.arobase)").fontWeight(.bold).foregroundColor(.green)
-                        Spacer()
-                        Text("\(company.arobaseScore)").fontWeight(.bold).foregroundColor(.blue)
-                    }
-                    HStack {
-                        Text("Score for ") + Text("\(company.hash)").fontWeight(.bold).foregroundColor(.green)
-                        Spacer()
-                        Text("\(company.hashScore)").fontWeight(.bold).foregroundColor(.blue)
-                    }
-                }
-                Section(header: Text("Subscore - Source: News API"), footer: Text("weight: 40%")) {
-                    HStack {
-                        Text("Score for ") + Text("\(company.name)").fontWeight(.bold).foregroundColor(.green)
-                        Spacer()
-                        Text("\(company.newsScore)").fontWeight(.bold).foregroundColor(.blue)
-                    }
-                }
-                Section(header: Text("Total")) {
-                    HStack {
-                        Text("Total Score :")
-                        Spacer()
-                        Text("\(Int(company.totalScore))").fontWeight(.black).foregroundColor(.blue)
-                    }
-                }
-            }
-            }
+            DetailView(company: company, showDetails: $showDetails)
         }
     }
 
@@ -167,8 +138,8 @@ struct CircleControl: View {
             height: pointWidth)
 
         return Path { path in
-                path.addEllipse(in: rect)
-            }.foregroundColor(.point)
+            path.addEllipse(in: rect)
+        }.foregroundColor(.point)
     }
 
     private func createCurrentValueText(radius: CGFloat) -> some View {
@@ -176,9 +147,9 @@ struct CircleControl: View {
         return VStack {
             Text("Score: \(String(format: "%.0f", company.totalScore))")
                 .font(Font.system(size: 40.0, weight: .bold, design: .rounded))
-            Button("Details") { showDetails = true }
+            DetailButton { showDetails = true }
         }
-        .frame(width: diametr, height: 75.0, alignment: .center)
+        .frame(width: diametr, height: 100.0, alignment: .center)
         .minimumScaleFactor(0.5)
     }
 

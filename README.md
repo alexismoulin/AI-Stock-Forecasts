@@ -27,7 +27,7 @@ The latest versions (1.4 and up) use **Core Data** to let you add, manage and sa
 
 ## Quick presentation of the app
 
-<img width="1161" alt="Screen Shot 2021-02-05 at 12 54 27 PM" src="https://user-images.githubusercontent.com/26531613/107070494-6e293a00-67b1-11eb-84a9-fd3d80ed8069.png">
+<img width="1403" alt="Screen Shot 2021-05-10 at 8 16 51 PM" src="https://user-images.githubusercontent.com/26531613/117740005-7b4d2f00-b1cd-11eb-996e-5083c51633fb.png">
 
 ## How does it work?
 

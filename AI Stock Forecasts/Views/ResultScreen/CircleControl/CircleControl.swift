@@ -8,13 +8,27 @@ struct CircleControl: View {
     let lineWidth: CGFloat = 44.0
     let segments: [Segment]
     let company: Company
+    let startAngle = Angle(radians: -.pi / 2)
+
+    var endAngle: Angle {
+        Angle(radians: Double(shiftedScore / totalBalance * 2 * .pi - .pi / 2.0))
+    }
+
+    var color: Color {
+        currentSegment()?.color ?? .white
+    }
+
+    var gradient: LinearGradient {
+        LinearGradient(
+            gradient: Gradient(colors: [color.opacity(0.6), color]),
+            startPoint: .leading,
+            endPoint: .trailing
+        )
+    }
 
     @State private var showDetails: Bool = false
+    @State private var shiftedScore: Double = 0
     @Binding var selectedSegment: Segment?
-
-    var shiftedScore: Double {
-        return company.totalScore + 100 // from 0 to 200
-    }
 
     // MARK: - body
 
@@ -22,7 +36,12 @@ struct CircleControl: View {
         GeometryReader { geometry in
             createBody(size: geometry.size)
         }
-        .onAppear { selectedSegment = currentSegment() }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 2)) {
+                shiftedScore = company.totalScore + 100
+                selectedSegment = currentSegment()
+            }
+        }
         .sheet(isPresented: $showDetails) {
             DetailView(company: company, showDetails: $showDetails)
         }
@@ -34,10 +53,28 @@ struct CircleControl: View {
         return ZStack {
             createOuterCircle(radius: controlRadius)
             createInnerCircle(radius: controlRadius)
-            createProgressArc(radius: controlRadius)
+            AnimatableProgressArc(
+                radius: controlRadius,
+                lineWidth: lineWidth,
+                startAngle: startAngle,
+                endAngle: endAngle
+            ).fill(color)
             createTopArc(radius: controlRadius)
             createPoints(radius: controlRadius)
-            createControlPoint(radius: controlRadius)
+            Group {
+                AnimatableControlPointExterior(
+                    radius: controlRadius,
+                    lineWidth: lineWidth,
+                    startAngle: startAngle,
+                    endAngle: endAngle
+                ).foregroundColor(.pickerColor)
+                AnimatableControlPointInterior(
+                    radius: controlRadius,
+                    lineWidth: lineWidth,
+                    startAngle: startAngle,
+                    endAngle: endAngle
+                ).foregroundColor(color)
+            }
             createCurrentValueText(radius: controlRadius)
         }
     }
@@ -67,26 +104,6 @@ struct CircleControl: View {
                 .fill(Color.background)
                 .frame(width: innerDiametr, height: innerDiametr)
         }
-    }
-
-    private func createProgressArc(radius: CGFloat) -> some View {
-        let center = CGPoint(x: radius, y: radius)
-        let angle = Double(shiftedScore / totalBalance * 2 * .pi - .pi / 2.0)
-        let color = currentSegment()?.color ?? Color.white
-        let gradient = LinearGradient(
-            gradient: Gradient(colors: [color.opacity(0.6), color]),
-            startPoint: .leading,
-            endPoint: .trailing)
-
-        return Path { path in
-            path.addArc(
-                center: center,
-                radius: radius - lineWidth / 2.0 - 1.0,
-                startAngle: .radians(-.pi / 2.0),
-                endAngle: .radians(angle),
-                clockwise: false)
-            path = path.strokedPath(.init(lineWidth: lineWidth - 2.0))
-        }.fill(gradient).animation(.default)
     }
 
     private func createTopArc(radius: CGFloat) -> some View {
@@ -153,39 +170,6 @@ struct CircleControl: View {
         .minimumScaleFactor(0.5)
     }
 
-    private func createControlPoint(radius: CGFloat) -> some View {
-        let angle = CGFloat(shiftedScore / totalBalance * 2 * .pi - .pi / 2.0)
-        let controlRadius = radius - lineWidth / 2.0 - 1.0
-        let center = CGPoint(x: radius, y: radius)
-        let x = center.x + controlRadius * cos(angle)
-        let y = center.y + controlRadius * sin(angle)
-        let pointCenter = CGPoint(x: x, y: y)
-
-        let borderRect = CGRect(
-            x: pointCenter.x - lineWidth / 2.0,
-            y: pointCenter.y - lineWidth / 2.0,
-            width: lineWidth + 2.0,
-            height: lineWidth + 2.0)
-
-        let rect = CGRect(
-            x: pointCenter.x - lineWidth / 2.0 + 4.0,
-            y: pointCenter.y - lineWidth / 2.0 + 4.0,
-            width: lineWidth - 6.0,
-            height: lineWidth - 6.0)
-
-        let color = currentSegment()?.color ?? .white
-
-        return Group {
-            Path { path in
-                path.addEllipse(in: borderRect)
-            }.foregroundColor(.pickerColor)
-
-            Path { path in
-                path.addEllipse(in: rect)
-            }.foregroundColor(color)
-        }
-    }
-
     // MARK: - Helper functions
 
     private func currentSegment() -> Segment? {
@@ -204,4 +188,45 @@ struct Segment: Equatable {
     let amount: Double
     let title: String
     let description: String
+}
+
+// MARK: - Preview
+
+struct ContentView_Previews: PreviewProvider {
+
+    static let segments: [Segment] = [
+        Segment(
+            color: Color.red.opacity(0.8),
+            amount: 0,
+            title: "Very Negative Outcome",
+            description: "The company and the stock have very negative feedbacks - The value of the stock is likely to decrease in the near future"), // swiftlint:disable:this line_length
+        Segment(
+            color: Color.orange.opacity(0.8),
+            amount: 40,
+            title: "Slightly Negative Outcome",
+            description: "The company and the stock have slightly negative feedbacks - The value of the stock may decrease slightly in the near future"), // swiftlint:disable:this line_length
+        Segment(
+            color: Color.yellow.opacity(0.8),
+            amount: 80,
+            title: "Stable Outcome",
+            description: "The company and the stock have neutral feedbacks - The value of the stock is likely to stay stable in the near future"), // swiftlint:disable:this line_length
+        Segment(
+            color: Color.green.opacity(0.8),
+            amount: 120,
+            title: "Slightly Positive Outcome",
+            description: "The company and the stock have slightly positive feedbacks - The value of the stock may increase slightly in the near future"), // swiftlint:disable:this line_length
+        Segment(
+            color: Color.blue.opacity(0.8),
+            amount: 160,
+            title: "Very Positive Outcome",
+            description: "The company and the stock have very positive feedbacks - The value of the stock is likely to increase slightly in the near future") // swiftlint:disable:this line_length
+    ]
+
+    static var previews: some View {
+        CircleControl(
+            segments: Self.segments,
+            company: CompaniesModel.example,
+            selectedSegment: .constant(Self.segments[3])
+        )
+    }
 }

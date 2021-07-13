@@ -4,7 +4,7 @@ struct StockHistoryView: View {
 
     let data: [StockLog]
     let currentDate: Date
-    @State var selectedIndex: Int = 0
+    @State var selectedIndex: Int = 11
 
     init(data: [StockLog]) {
         self.data = data

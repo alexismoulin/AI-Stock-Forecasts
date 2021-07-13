@@ -201,7 +201,7 @@ struct StockGraph: View {
             let scale = geo.size.height / (maxNum - minNum)
 
             ZStack(alignment: .leading) {
-                createLineAndPointOverlay(scale: scale, width: geo.size.width - 16)
+                createLineAndPointOverlay(scale: scale, width: geo.size.width)
                 Color.white.opacity(0.1)
                     .gesture(
                         DragGesture(minimumDistance: 0)
@@ -224,6 +224,7 @@ struct StockGraph: View {
                                 self.selectedXPos = min(max(8, xPos), geo.size.width - 8)
                                 self.lineOffset = min(max(8, xPos), geo.size.width - 8)
                             }
+
                             .onEnded { touch in
                                 let xPos = touch.location.x
                                 self.isSelected = false

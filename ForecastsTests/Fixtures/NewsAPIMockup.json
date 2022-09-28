@@ -1,0 +1,266 @@
+{
+    "status": "ok",
+    "totalResults": 9008,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Lizzy Gurdus",
+            "title": "Not just 'finding the next meme stock': Moonshot Innovators ETF manager breaks down fund's strategy",
+            "description": "Direxion's Moonshot Innovators ETF (MOON) offers a way for investors to chase growth without the sway of juggernauts such as Tesla and Apple, its manager says.",
+            "url": "https://www.cnbc.com/2021/04/04/moonshot-innovators-etf-manager-breaks-down-his-new-funds-strategy.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106828476-1611326416970-Vuzix_CES_2021.jpg?v=1617310527",
+            "publishedAt": "2021-04-04T16:56:09Z",
+            "content": "Innovation is a hot commodity in today's market.\r\nDirexion bet big on that idea last November when it launched its Moonshot Innovators ETF (MOON), a fund that aims to give investors \"exposure to the … [+2551 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Slashdot.org"
+            },
+            "author": "EditorDavid",
+            "title": "Tesla will Sell 'Green Credits' to Volkswagen in China",
+            "description": "Reuters reports:\n\nA Volkswagen joint venture in China has agreed to buy green car credits from Tesla to help meet local environmental rules \n\nThe deal, the first of its kind to be reported between the two companies in China, highlights the scale of the task V…",
+            "url": "https://hardware.slashdot.org/story/21/04/03/046242/tesla-will-sell-green-credits-to-volkswagen-in-china",
+            "urlToImage": "https://a.fsdn.com/sd/topics/power_64.png",
+            "publishedAt": "2021-04-04T16:34:00Z",
+            "content": "Reuters reports:\r\nA Volkswagen joint venture in China has agreed to buy green car credits from Tesla to help meet local environmental rulesThe deal, the first of its kind to be reported between the t… [+1419 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Business 2 Community"
+            },
+            "author": "Paul Dughi",
+            "title": "Apple, Amazon Are Wealthier than 92% of the Countries in the World",
+            "description": "A new study by Clario Tech has analyzed which tech giants are wealthier than entire countries! Tech giant, Apple dominates…",
+            "url": "https://www.business2community.com/tech-gadgets/apple-amazon-are-wealthier-than-92-of-the-countries-in-the-world-02395921",
+            "urlToImage": "https://cdn.business2community.com/wp-content/uploads/2021/03/u4kc1CdBq94Bleqx2L6lMQ7Tpw9JUuVeOoF6gbfiB1WPItpPXKBt1mhUZxFhjUzZR6VrhWVUo_2itycVDcBYM_Y77cAdJwlLfjw2H7bt0Y86QjNWX65dwa6_YbGRqfXQ2uGUwCO1-900x692.jpg",
+            "publishedAt": "2021-04-04T16:30:30Z",
+            "content": "A new study by Clario Tech has analyzed which tech giants are wealthier than entire countries!\r\nTech giant, Apple dominates global industry and has reached a colossal value of $2.2 trillion. This stu… [+4963 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "hackernoon.com"
+            },
+            "author": "Michael Peres",
+            "title": "SEMRush IPO Puts Digital Marketing in the Spotlight | Hacker Noon",
+            "description": "As of last month, SEMRush, a (SaaS) company that specializes in aiding businesses with online visibility management and content marketing, has gone public.",
+            "url": "https://hackernoon.com/semrush-ipo-puts-digital-marketing-in-the-spotlight-h53735g2",
+            "urlToImage": "https://hackernoon.com/images/4XWayxmyzVaqjYxqsMpheuKiECq2-95g33rl.jpeg",
+            "publishedAt": "2021-04-04T16:24:04Z",
+            "content": "As of last month, SEMRush, a software-as-a-service (SaaS) company that specializes in aiding businesses with online visibility management and content marketing, has gone public. It announced an initi… [+3934 chars]"
+        },
+        {
+            "source": {
+                "id": "usa-today",
+                "name": "USA Today"
+            },
+            "author": "Detroit Free Press, Phoebe Wall Howard, Detroit Free Press",
+            "title": "Tesla owner with Mustang Mach-E reports threats on social media from Tesla fans",
+            "description": "The fiery debate among Ford and Tesla owners reflects the intensity surrounding a growing all-electric market dominated by Tesla.",
+            "url": "https://www.usatoday.com/story/money/cars/2021/04/04/tesla-owner-threats-praising-ford-mustang-mach-e/7082995002/",
+            "urlToImage": "https://www.gannett-cdn.com/presto/2021/03/09/PDTF/a7e2f245-8256-4cbf-b2f0-b08e72062756-sergio_car.jpg?crop=638,359,x1,y101&width=1600&height=800&fit=bounds",
+            "publishedAt": "2021-04-04T15:19:27Z",
+            "content": "Tesla owner drives cross-country in his all-electric 2021 Ford Mustang Mach-E.\r\nDetroit Free Press\r\nSergio Rodriguez never imagined saying nice things about his new Ford Mustang Mach-E would elicit \"… [+8048 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Autoblog"
+            },
+            "author": "Reuters",
+            "title": "Aurora, Volvo partner on self-driving heavy trucks",
+            "description": "Filed under:\n Green,Volvo,Truck,Autonomous,Commercial Vehicles\n Continue reading Aurora, Volvo partner on self-driving heavy trucks\nAurora, Volvo partner on self-driving heavy trucks originally appeared on Autoblog on Sun, 4 Apr 2021 11:00:00 EDT. Please see …",
+            "url": "https://www.autoblog.com/2021/04/04/volvo-aurora-autonomous-trucks/",
+            "urlToImage": "https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/800x450/format/jpg/quality/85/https://s.yimg.com/os/creatr-uploaded-images/2021-04/08bfccf0-93ea-11eb-9aff-3f448d3059a4",
+            "publishedAt": "2021-04-04T15:00:00Z",
+            "content": "Global heavy truck manufacturers are lining up technology partners to help build out self-driving systems for long-haul freight that could see widespread commercial service well before self-driving r… [+1819 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Freerepublic.com"
+            },
+            "author": "cnet",
+            "title": "Tesla Roadster, meet MG Cyberster: British brand's electric sports car shows off",
+            "description": "Long before Tesla built its Roadster, a classic British brand was best known for tiny drop-top sports cars. That'd be MG. Though it's under Chinese ownership these days, MG hinted it wants to return to the days of the roadster and revealed the first photos of…",
+            "url": "https://freerepublic.com/focus/f-chat/3947773/posts",
+            "urlToImage": null,
+            "publishedAt": "2021-04-04T14:29:40Z",
+            "content": "Skip to comments.\r\nTesla Roadster, meet MG Cyberster: British brand's electric sports car shows offcnet ^Posted on 04/04/2021 7:29:40 AM PDT by mylife\r\nLong before Tesla built its Roadster, a classic… [+4310 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CarScoops"
+            },
+            "author": "Sebastien Bell",
+            "title": "Stellantis Wants To Triple Its Sales Of Electrified Vehicles In 2021",
+            "description": "Stellantis will sell more than 400,000 electrified models this year, says company chairman John Elkann.",
+            "url": "https://www.carscoops.com/2021/04/stellantis-wants-to-triple-its-sales-of-electrified-vehicles-in-2021/",
+            "urlToImage": "https://www.carscoops.com/wp-content/uploads/2021/04/2021-Jeep-Wrangler-4xe.jpg",
+            "publishedAt": "2021-04-04T14:08:07Z",
+            "content": "Stellantis is aiming to move 400,000 hybrid and electric vehicles by the end of 2021 – or nearly three times the 139,000 units it sold in 2020.\r\nThe statement comes from Stellantis Chairman John Elka… [+1088 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Freerepublic.com"
+            },
+            "author": "freebeacon",
+            "title": "Biden’s Infrastructure Plan Could Boost Pelosi’s Investment Portfolio",
+            "description": "President Joe Biden's $2 trillion infrastructure plan includes a provision to boost electric vehicle use—which House speaker Nancy Pelosi stands to personally benefit from. Pelosi's husband Paul purchased between $500,000 and $1 million in Tesla investments i…",
+            "url": "https://freerepublic.com/focus/f-news/3947762/posts",
+            "urlToImage": null,
+            "publishedAt": "2021-04-04T13:40:49Z",
+            "content": "Skip to comments.\r\nBidens Infrastructure Plan Could Boost Pelosis Investment Portfoliofreebeacon ^\r\n | APRIL 2, 2021\r\n | Joe Schoffstall \r\nPosted on 04/04/2021 6:40:49 AM PDT by MarvinStinson\r\nPresid… [+3918 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Tech Times"
+            },
+            "author": "Sieeka Khan",
+            "title": "Tesla Appeals to Court that Ordered CEO Elon Musk to Delete an Anti-Union Tweet",
+            "description": "Elon Musk was forced to delete the tweet he made in 2020 about worker unions.",
+            "url": "https://www.techtimes.com/articles/258713/20210404/tesla-appeals-court-ordered-ceo-elon-musk-delete-anti-union.htm",
+            "urlToImage": "https://1734811051.rsc.cdn77.org/data/images/full/382967/elon-musk.jpg",
+            "publishedAt": "2021-04-04T13:34:54Z",
+            "content": "Electric vehicle manufacturer Tesla filed an appeal against the National Labor Relations Board or NLRB's ruling, which ordered the company's CEO Elon Musk to delete an anti-union tweet.\r\nElon Musk's … [+3339 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Niall Ferguson",
+            "title": "Don’t Let China Mint the Digital Currency of the Future",
+            "description": "U.S. policy makers need to wake up to the potential of digital currency and electronic payments and the peril of allowing China to dominate them.",
+            "url": "https://www.bloomberg.com/opinion/articles/2021-04-04/don-t-let-china-mint-the-digital-currency-of-the-future",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ieb_UtFRo5Ws/v1/1200x800.jpg",
+            "publishedAt": "2021-04-04T13:19:36Z",
+            "content": "The Fort Knox of the future.\r\nPhotographer:  Andrey Rudakov/Bloomberg via Getty Images\r\nWhat is the money of the future? My nine-year-old son thinks it will be Robux. For those of you trapped in the … [+21764 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Autoblog"
+            },
+            "author": "Reuters",
+            "title": "EPA to study whether renewable fuels used to charge should generate EV credits",
+            "description": "Filed under:\n Government/Legal,Green,Alternative Fuels\n Continue reading EPA to study whether renewable fuels used to charge should generate EV credits\nEPA to study whether renewable fuels used to charge should generate EV credits originally appeared on Autob…",
+            "url": "https://www.autoblog.com/2021/04/04/epa-renewable-fuel-credits/",
+            "urlToImage": "https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/800x450/format/jpg/quality/85/https://s.yimg.com/os/creatr-uploaded-images/2021-04/a41dc070-93e1-11eb-90fe-50e6d0e76c53",
+            "publishedAt": "2021-04-04T13:00:00Z",
+            "content": "NEW YORK The White House has directed the U.S. Environmental Protection Agency to study whether using renewable fuels to power electric vehicle charging should generate tradeable credits under the na… [+3382 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Seeking Alpha"
+            },
+            "author": "Josh Arnold",
+            "title": "Fisker: Hope Is Not A Valid Investing Strategy",
+            "description": "FSR is a lottery ticket being valued at $5 billion worth of hope, but I'm cautious given the competitive landscape.",
+            "url": "https://seekingalpha.com/article/4417443-fisker-hope-not-valid-investing-strategy?source=feed_tag_us",
+            "urlToImage": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1217813752/medium_image_1217813752.jpg",
+            "publishedAt": "2021-04-04T12:42:02Z",
+            "content": "Photo by jonathanfilskov-photography/iStock via Getty Images\r\nThere are very few sectors that have received as much media and investor attention as electric vehicles. The sector is red hot because as… [+8112 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Seeking Alpha"
+            },
+            "author": "Josh Arnold",
+            "title": "Fisker: Hope Is Not A Valid Investing Strategy",
+            "description": "FSR is a lottery ticket being valued at $5 billion worth of hope, but I'm cautious given the competitive landscape.",
+            "url": "https://seekingalpha.com/article/4417443-fisker-hope-not-valid-investing-strategy?source=feed_all_articles",
+            "urlToImage": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1217813752/medium_image_1217813752.jpg",
+            "publishedAt": "2021-04-04T12:42:02Z",
+            "content": "Photo by jonathanfilskov-photography/iStock via Getty Images\r\nThere are very few sectors that have received as much media and investor attention as electric vehicles. The sector is red hot because as… [+8112 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "tgolden@businessinsider.com (Theo Golden)",
+            "title": "General Motors has unveiled a new all-electric Hummer SUV to accompany the EV pickup due in the fall",
+            "description": "The two EVs are the first Hummers to be launched since 2010, marking the infamous American brand's entry into the electric-vehicle market.",
+            "url": "https://www.businessinsider.com/general-motors-unveils-all-electric-hummer-suv-expanding-ev-offering-2021-4",
+            "urlToImage": "https://i.insider.com/6069b18fa7d803001963ea74?width=1200&format=jpeg",
+            "publishedAt": "2021-04-04T12:34:47Z",
+            "content": "General Motors has doubled up on its electric vehicle (EV) offering with an announcement on Saturday of its second all-electric Hummers.\r\nGM already announced its upcoming EV Hummer pickup, which is … [+1825 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Justin Anderson",
+            "title": "Meet 4 stock market influencers every investor should know about",
+            "description": "Millions of social media followers look to them for money-making advice.",
+            "url": "https://finance.yahoo.com/news/meet-4-stock-market-influencers-120000618.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/kpShTEJvZ6DYgAiH.X.pgg--~B/aD00MDA7dz03Mjg7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/moneywise_327/0bc74cf1e712677bf1f457d7e06db68f",
+            "publishedAt": "2021-04-04T12:00:00Z",
+            "content": "Meet 4 stock market influencers every investor should know about\r\nThe Reddit Rally from earlier this year underlined a very 2021 phenomenon: The stock market was roiled in real-time by what people we… [+4656 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Zahra Tayeb",
+            "title": "Tesla is appealing against a labor board ruling that ordered Elon Musk to delete an anti-union tweet",
+            "description": "Summary List PlacementTesla has filed an appeal against the National Labor Relations Board's (NLRB) ruling, which commanded CEO Elon Musk to delete an anti-union tweet. \nThe company is also requesting that the US Court of Appeals review the board's decision t…",
+            "url": "https://www.businessinsider.com/tesla-appeals-ruling-labor-board-ruling-elon-musk-delete-anti-union-tweet-2021-4",
+            "urlToImage": "https://i.insider.com/5fff5bb5a8de7700187d3b81?width=1200&format=jpeg",
+            "publishedAt": "2021-04-04T10:30:15Z",
+            "content": "Tesla has filed an appeal against the National Labor Relations Board's (NLRB) ruling, which commanded CEO Elon Musk to delete an anti-union tweet. \r\nThe company is also requesting that the US Court o… [+1198 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Julia Horowitz, CNN Business",
+            "title": "High fees and pricey cowboy boots: Why crypto spending isn't about to go mainstream",
+            "description": "Last month, I set out to buy my father, an avid Before the Bell reader, a non-fungible token, or NFT.",
+            "url": "https://www.cnn.com/2021/04/04/investing/stocks-week-ahead/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/210402124905-digital-cryptocurrencies-bitcoin-ethereum-file-restricted-super-tease.jpg",
+            "publishedAt": "2021-04-04T10:18:49Z",
+            "content": "A version of this story first appeared in CNN Business' Before the Bell newsletter. Not a subscriber? You can sign up right here.\r\nLondon (CNN Business)Last month, I set out to buy my father, an avid… [+6144 chars]"
+        },
+        {
+            "source": {
+                "id": "the-wall-street-journal",
+                "name": "The Wall Street Journal"
+            },
+            "author": "Caitlin McCabe",
+            "title": "Individual Investors Retreat from Markets After Show-Stopping Start to 2021 - The Wall Street Journal",
+            "description": "Net purchases of U.S. equities by nonprofessional investors recently fell to the lowest level of 2021 as market uncertainty continues",
+            "url": "https://www.wsj.com/articles/individual-investors-retreat-from-markets-after-show-stopping-start-to-2021-11617528781",
+            "urlToImage": "https://images.wsj.net/im-319476/social",
+            "publishedAt": "2021-04-04T09:33:00Z",
+            "content": "Individual investors kicked off 2021 at a sprinters pace. Now, they are finally showing signs of fatigue.\r\nTrading activity among nonprofessional investors has slowed in recent weeks after a blockbus… [+1589 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Martin Coulter",
+            "title": "DeepMind's cofounder partied with Elon Musk for his raucous 40th birthday party on the Orient Express, a new book revealed",
+            "description": "Summary List PlacementOne of the cofounders of Google's buzzy in-house AI company DeepMind once partied with Elon Musk as the Tesla cofounder celebrated his birthday on board the Orient Express, a new book reveals.\nThe Tesla CEO's 40th birthday party in June …",
+            "url": "https://www.businessinsider.com/deepmind-cofounder-elon-musk-tesla-orient-express-2021-4",
+            "urlToImage": "https://i.insider.com/6065e812902281001950a93b?width=1200&format=jpeg",
+            "publishedAt": "2021-04-04T09:01:00Z",
+            "content": "One of the cofounders of Google's buzzy in-house AI company DeepMind once partied with Elon Musk as the Tesla cofounder celebrated his birthday on board the Orient Express, a new book reveals.\r\nThe T… [+1529 chars]"
+        }
+    ]
+}
